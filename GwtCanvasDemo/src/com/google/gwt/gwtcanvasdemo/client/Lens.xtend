@@ -29,7 +29,7 @@ public class Lens {
   
   Vector pos
   Vector vel
-  List<Pair<int,int>> lensArray = newArrayList
+  List<Pair<Integer,Integer>> lensArray = newArrayList
   
   // color of lens outline
   val FillStrokeStyle strokeStyle = CssColor::make("#333300")
