@@ -34,24 +34,21 @@ class Ball extends SpringObject {
     this.velZ = 0
     this.goalZ = startPosZ
     this.radius = radius
-    this.startPos = new Vector(start)
+    this.startPos = start
     this.startPosZ = startPosZ
     this.startRadius = radius
   }
   
   new(double x, double y, double z, double radius, String color) {
-    this(new Vector(x, y), z, radius, CssColor::make(color))
+    this(new Vector(x, y), z, radius, CssColor.make(color))
   }
   
   override void update() {
     super.update()
     
-    val dh = Vector::sub(startPos, pos)
-    val dist = dh.mag()
-    goalZ = dist / 100.0 + 1.0
-    val dgZ = goalZ - posZ
-    val aZ = dgZ * springStrength
-    velZ = velZ + aZ
+    val dh = startPos - pos
+    goalZ = dh.mag / 100.0 + 1.0
+    velZ = velZ + (goalZ - posZ) * springStrength
     velZ = velZ * friction
     posZ = posZ + velZ
     
@@ -62,7 +59,7 @@ class Ball extends SpringObject {
   def void draw(Context2d context) {
     context.fillStyle = color
     context.beginPath
-    context.arc(pos.x, pos.y, radius, 0, Math::PI * 2.0, true)
+    context.arc(pos.x, pos.y, radius, 0, Math.PI * 2.0, true)
     context.closePath
     context.fill
   }

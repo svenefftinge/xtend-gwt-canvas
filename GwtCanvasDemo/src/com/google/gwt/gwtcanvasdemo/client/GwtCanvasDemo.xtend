@@ -44,15 +44,15 @@ public class GwtCanvasDemo extends Timer implements EntryPoint {
   static val height = 400
   static val width = 600
   
-  val redrawColor = CssColor::make("rgba(255,255,255,0.6)")
+  val redrawColor = CssColor.make("rgba(255,255,255,0.6)")
   Context2d context
   Context2d backBufferContext
   
   override void onModuleLoad() {
-    canvas = Canvas::createIfSupported()
-    backBuffer = Canvas::createIfSupported()
+    canvas = Canvas.createIfSupported()
+    backBuffer = Canvas.createIfSupported()
     if (canvas == null) {
-      RootPanel::get(holderId).add(new Label(upgradeMessage))
+      RootPanel.get(holderId).add(new Label(upgradeMessage))
       return
     }
 
@@ -63,7 +63,7 @@ public class GwtCanvasDemo extends Timer implements EntryPoint {
     canvas.coordinateSpaceHeight = height
     backBuffer.coordinateSpaceWidth = width
     backBuffer.coordinateSpaceHeight = height
-    RootPanel::get(holderId).add(canvas)
+    RootPanel.get(holderId).add(canvas)
     context = canvas.context2d
     backBufferContext = backBuffer.context2d
     

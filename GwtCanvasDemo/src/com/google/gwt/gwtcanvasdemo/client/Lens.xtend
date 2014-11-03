@@ -32,7 +32,7 @@ public class Lens {
   List<Pair<Integer,Integer>> lensArray = newArrayList
   
   // color of lens outline
-  val FillStrokeStyle strokeStyle = CssColor::make("#333300")
+  val FillStrokeStyle strokeStyle = CssColor.make("#333300")
   
   new(int radius, int mag, int w, int h, Vector initPos, Vector vel) {
     this.radius = radius
@@ -45,11 +45,11 @@ public class Lens {
     // calculate lens array
     var int a
     var int b
-    val s = Math::sqrt(radius*radius - mag*mag)
+    val s = Math.sqrt(radius*radius - mag*mag)
     for (y : -radius .. radius) {
       for (x : -radius .. radius) {
         if(x*x + y*y < s*s) {
-          val z = Math::sqrt(radius*radius - x*x - y*y)
+          val z = Math.sqrt(radius*radius - x*x - y*y)
           a = (x * mag / z + 0.5) as int
           b = (y * mag / z + 0.5) as int
           val dstIdx = (y + radius) * 2 * radius + (x + radius)
@@ -62,25 +62,24 @@ public class Lens {
   
   def void update() {
     if (pos.x + radius + vel.x > width || pos.x - radius + vel.x < 0) {
-      vel.x = vel.x * -1
+      vel = vel.withX(vel.x * -1)
     }
     if (pos.y + radius + vel.y > height || pos.y - radius + vel.y < 0) {
-      vel.y = vel.y *-1
+      vel = vel.withY(vel.y *-1)
     }
     
-    pos.x = pos.x + vel.x
-    pos.y = pos.y + vel.y
+    pos += vel
   }
   
   def void draw(Context2d back, Context2d front) {
-    front.drawImage(back.getCanvas(), 0, 0)
+    front.drawImage(back.canvas, 0, 0)
     
-    if (!GWT::isScript()) {
+    if (!GWT.isScript()) {
       // in devmode this effect is slow so we disable it here
     } else {
-      val frontData = front.getImageData((pos.x - radius) as int, (pos.y - radius) as int, 2 * radius, 2 * radius)
-      val frontPixels = frontData.getData()
-      val backData = back.getImageData((pos.x - radius) as int, (pos.y - radius) as int, 2 * radius, 2 * radius)
+      val frontData = front.getImageData(pos.x - radius, pos.y - radius, 2 * radius, 2 * radius)
+      val frontPixels = frontData.data
+      val backData = back.getImageData(pos.x - radius, pos.y - radius, 2 * radius, 2 * radius)
       val backPixels = backData.data
       var int srcIdx
       var int dstIdx
@@ -91,12 +90,12 @@ public class Lens {
         frontPixels.set(dstIdx + 1, backPixels.get(srcIdx + 1))
         frontPixels.set(dstIdx + 2, backPixels.get(srcIdx + 2))
       }
-      front.putImageData(frontData, (pos.x - radius) as int, (pos.y - radius) as int)
+      front.putImageData(frontData, pos.x - radius, pos.y - radius)
     }
     
     front.setStrokeStyle(strokeStyle)
     front.beginPath()
-    front.arc(pos.x, pos.y, radius, 0, Math::PI * 2, true)
+    front.arc(pos.x, pos.y, radius, 0, Math.PI * 2, true)
     front.closePath()
     front.stroke()
   }

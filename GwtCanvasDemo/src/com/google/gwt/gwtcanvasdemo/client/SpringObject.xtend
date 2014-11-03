@@ -14,6 +14,8 @@
 
 package com.google.gwt.gwtcanvasdemo.client
 
+import static extension com.google.gwt.gwtcanvasdemo.client.Vector.*
+
 public class SpringObject {
   public static val double springStrength = 0.1
   public static val double friction = 0.8
@@ -22,16 +24,16 @@ public class SpringObject {
   public Vector goal
   
   new(Vector start) {
-    this.pos = new Vector(start)
-    this.vel = new Vector(0, 0)
-    this.goal = new Vector(start)
+    this.pos = start
+    this.vel = 0 -> 0
+    this.goal = start
   }
   
   def void update() {
-    val d = Vector::sub(goal, pos)
-    d.mult(springStrength)
-    vel.add(d)
-    vel.mult(friction)
-    pos.add(vel)
+//    val d = goal - pos
+//    d.mult(springStrength)
+    vel = vel + (goal - pos) * springStrength
+    vel = vel * friction
+    pos = pos + vel
   }
 }

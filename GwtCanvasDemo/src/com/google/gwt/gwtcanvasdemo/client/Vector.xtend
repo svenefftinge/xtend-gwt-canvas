@@ -14,59 +14,45 @@
 
 package com.google.gwt.gwtcanvasdemo.client
 
-public class Vector {
-  public double x
-  public double y
+import org.eclipse.xtend.lib.annotations.Data
+
+@Data class Vector {
+  double x
+  double y
   
-  new() {
-    this(0.0, 0.0)
+  def static ->(double x, double y) {
+  	new Vector(x,y)
   }
   
-  new(double x, double y) {
-    this.x = x
-    this.y = y
+  def withX(double x) {
+  	new Vector(x,y)
   }
   
-  new(Vector v) {
-    this(v.x, v.y)
+  def withY(double y) {
+  	new Vector(x,y)
   }
   
-  def void add(double x, double y) {
-    this.x = this.x + x
-    this.y = this.y + y
+  def Vector +(Vector v) {
+    new Vector(x+v.x, y+v.y)
   }
   
-  def void add(Vector v) {
-    add(v.x, v.y)
+  def Vector -(Vector v) {
+    new Vector(x-v.x, y-v.y)
   }
   
-  def void sub(Vector v) {
-    sub(v.x, v.y)
+  def Vector *(Vector v) {
+    new Vector(x*v.x, y*v.y)
   }
   
-  def void sub(double x, double y) {
-    this.x = this.x - x
-    this.y = this.y - y
-  }
-  
-  def void mult(double x, double y) {
-    this.x = this.x * x
-    this.y = this.y * y
-  }
-  
-  def void mult(Vector v) {
-    mult(v.x, v.y)
-  }
-  
-  def void mult(double c) {
-    mult(c, c)
+  def Vector *(double v) {
+    new Vector(x*v, y*v)
   }
   
   def double mag() {
     if (x == 0 && y == 0) {
       return 0
     } else {
-      return Math::sqrt(x * x + y * y)
+      return Math.sqrt(x * x + y * y)
     }
   }
   
@@ -74,16 +60,7 @@ public class Vector {
     return x * x + y * y
   }
   
-  def void set(Vector v) {
-    x = v.x
-    y = v.y
-  }
-  
-  def static Vector sub(Vector a, Vector b) {
-    return new Vector(a.x - b.x, a.y - b.y)
-  }
-  
-  def static Vector mult(Vector v, double c) {
-    return new Vector(v.x * c, v.y * c)
+  override toString() {
+  	return '('+x+' -> '+'y'+')'
   }
 }

@@ -17,6 +17,8 @@ package com.google.gwt.gwtcanvasdemo.client
 import com.google.gwt.canvas.dom.client.Context2d
 import java.util.List
 
+import static extension com.google.gwt.gwtcanvasdemo.client.Vector.*
+
 public class BallGroup {
   val double width
   val double height
@@ -97,27 +99,24 @@ public class BallGroup {
     // adjust sizes for this demo
     val scale = 0.70f
     for (ball : balls) {
-      ball.pos.x = width / 2 - scale * 180 + scale * ball.pos.x
-      ball.pos.y = height / 2 - scale * 65 + scale * ball.pos.y
+      ball.pos = (width / 2 - scale * 180 + scale * ball.pos.x) -> (height / 2 - scale * 65 + scale * ball.pos.y)
       ball.radius = scale * ball.radius
       ball.startRadius = scale * ball.startRadius
-      ball.startPos.x = ball.pos.x
-      ball.startPos.y = ball.pos.y
+      ball.startPos = ball.pos
     }
   }
   
   def void update(double mouseX, double mouseY) {
-    val d = new Vector(0, 0)
+    var d = new Vector(0, 0)
     for (ball : balls) {
-      d.x = mouseX - ball.pos.x
-      d.y = mouseY - ball.pos.y
-      if (d.magSquared() < 100*100) {
-        ball.goal = Vector::sub(ball.pos, d)
+      d = (mouseX - ball.pos.x) -> (mouseY - ball.pos.y)
+      if (d.magSquared < 100*100) {
+        ball.goal = ball.pos - d
       } else {
-        ball.goal.set(ball.startPos)
+        ball.goal = ball.startPos
       }
       
-      ball.update()
+      ball.update
     }
   }
   

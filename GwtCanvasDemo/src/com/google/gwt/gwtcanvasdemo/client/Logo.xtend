@@ -28,10 +28,10 @@ class Logo extends SpringObject {
   }
   
   def void draw(Context2d context) {
-    context.save()
+    context.save
     context.translate(this.pos.x, this.pos.y)
     context.rotate(rot)
     context.drawImage(image, 0, 0)
-    context.restore()
+    context.restore
   }
 }

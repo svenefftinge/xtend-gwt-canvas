@@ -20,6 +20,8 @@ import com.google.gwt.user.client.ui.Image
 import com.google.gwt.user.client.ui.RootPanel
 import java.util.List
 
+import static extension com.google.gwt.gwtcanvasdemo.client.Vector.*
+
 public class LogoGroup {
   val double width
   val double height
@@ -48,13 +50,12 @@ public class LogoGroup {
         val ImageElement imageElement = logoImg.element.cast
         for (i : 1..numLogos) {
           logos += new Logo(imageElement) => [
-	          pos.x = width / 2
-	          pos.y = height / 2
+	          pos = (width / 2) -> (height / 2)
           ]
         }
     ]
     logoImg.visible = false
-    RootPanel::get.add(logoImg) // image must be on page to fire load
+    RootPanel.get.add(logoImg) // image must be on page to fire load
   }
   
   def void update(double mouseX, double mouseY) {
@@ -62,23 +63,22 @@ public class LogoGroup {
       return
     }
     
-    k = (k + Math::PI/2.0* 0.009)
+    k = (k + Math.PI/2.0* 0.009)
     
     for (i : numLogos..1) {
       val logo = logos.get(i-1)
-      val logoPerTPi = 2 * Math::PI * (i-1) / numLogos
-      val goal = new Vector(width / 2 + radius * Math::cos(k + logoPerTPi), 
-          height / 2 + radius * Math::sin(k + logoPerTPi))
-      logo.goal.set(goal)
-      logo.rot = k + logoPerTPi + Math::PI / 2.0
+      val logoPerTPi = 2 * Math.PI * (i-1) / numLogos
+      val goal = new Vector(width / 2 + radius * Math.cos(k + logoPerTPi), 
+          height / 2 + radius * Math.sin(k + logoPerTPi))
+      logo.goal = goal
+      logo.rot = k + logoPerTPi + Math.PI / 2.0
       
-      val d = new Vector(mouseX, mouseY)
-      d.sub(logo.pos)
+      val d = (mouseX -> mouseY) - logo.pos
       if (d.magSquared() < 50*50) {
-        logo.goal = Vector::sub(logo.pos, d)
+        logo.goal = logo.pos - d
       }
       
-      logo.update()
+      logo.update
     }
   }
   

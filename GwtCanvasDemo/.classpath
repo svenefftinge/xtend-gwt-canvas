@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="lib/org.eclipse.xtend.lib.macro-2.7.2.jar"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.xtext.xbase.lib-2.7.2.jar"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.xtext.xbase.lib.gwt-2.7.2.jar"/>
+	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
