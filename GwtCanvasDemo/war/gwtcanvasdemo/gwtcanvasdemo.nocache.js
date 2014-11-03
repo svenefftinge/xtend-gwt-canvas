@@ -55,15 +55,15 @@ function gwtcanvasdemo(){
       return slashIndex >= 0?path.substring(0, slashIndex + 1):'';
     }
 
-    function ensureAbsoluteUrl(url){
-      if (url.match(/^\w+:\/\//)) {
+    function ensureAbsoluteUrl(url_0){
+      if (url_0.match(/^\w+:\/\//)) {
       }
        else {
         var img = $doc_0.createElement('img');
-        img.src = url + 'clear.cache.gif';
-        url = getDirectoryOfFile(img.src);
+        img.src = url_0 + 'clear.cache.gif';
+        url_0 = getDirectoryOfFile(img.src);
       }
-      return url;
+      return url_0;
     }
 
     function tryMetaTag(){
@@ -113,6 +113,11 @@ function gwtcanvasdemo(){
       return '';
     }
 
+    function isLocationOk(){
+      var loc = $doc_0.location;
+      return loc.href == loc.protocol + '//' + loc.host + loc.pathname + loc.search + loc.hash;
+    }
+
     var tempBase = tryMetaTag();
     if (tempBase == '') {
       tempBase = tryNocacheJsTag();
@@ -123,7 +128,7 @@ function gwtcanvasdemo(){
     if (tempBase == '') {
       tempBase = tryBaseTag();
     }
-    if (tempBase == '') {
+    if (tempBase == '' && isLocationOk()) {
       tempBase = getDirectoryOfFile($doc_0.location.href);
     }
     tempBase = ensureAbsoluteUrl(tempBase);
@@ -143,16 +148,16 @@ function gwtcanvasdemo(){
         if (name_0 == 'gwt:property') {
           content_0 = meta.getAttribute('content');
           if (content_0) {
-            var value, eq = content_0.indexOf('=');
+            var value_0, eq = content_0.indexOf('=');
             if (eq >= 0) {
               name_0 = content_0.substring(0, eq);
-              value = content_0.substring(eq + 1);
+              value_0 = content_0.substring(eq + 1);
             }
              else {
               name_0 = content_0;
-              value = '';
+              value_0 = '';
             }
-            metaProps[name_0] = value;
+            metaProps[name_0] = value_0;
           }
         }
          else if (name_0 == 'gwt:onPropertyErrorFn') {
@@ -182,29 +187,29 @@ function gwtcanvasdemo(){
   }
 
   function __gwt_getMetaProperty(name_0){
-    var value = metaProps[name_0];
-    return value == null?null:value;
+    var value_0 = metaProps[name_0];
+    return value_0 == null?null:value_0;
   }
 
-  function unflattenKeylistIntoAnswers(propValArray, value){
+  function unflattenKeylistIntoAnswers(propValArray, value_0){
     var answer = answers;
     for (var i = 0, n = propValArray.length - 1; i < n; ++i) {
       answer = answer[propValArray[i]] || (answer[propValArray[i]] = []);
     }
-    answer[propValArray[n]] = value;
+    answer[propValArray[n]] = value_0;
   }
 
   function computePropValue(propName){
-    var value = providers[propName](), allowedValuesMap = values[propName];
-    if (value in allowedValuesMap) {
-      return value;
+    var value_0 = providers[propName](), allowedValuesMap = values[propName];
+    if (value_0 in allowedValuesMap) {
+      return value_0;
     }
     var allowedValuesList = [];
     for (var k in allowedValuesMap) {
       allowedValuesList[allowedValuesMap[k]] = k;
     }
     if (propertyErrorFunc) {
-      propertyErrorFunc(propName, allowedValuesList, value);
+      propertyErrorFunc(propName, allowedValuesList, value_0);
     }
     throw null;
   }
@@ -231,32 +236,15 @@ function gwtcanvasdemo(){
     }
     ;
     if (function(){
-      return ua.indexOf('opera') != -1;
-    }
-    ())
-      return 'opera';
-    if (function(){
-      return ua.indexOf('webkit') != -1 || function(){
-        if (ua.indexOf('chromeframe') != -1) {
-          return true;
-        }
-        if (typeof window['ActiveXObject'] != 'undefined') {
-          try {
-            var obj = new ActiveXObject('ChromeTab.ChromeFrame');
-            if (obj) {
-              obj.registerBhoIfNeeded();
-              return true;
-            }
-          }
-           catch (e) {
-          }
-        }
-        return false;
-      }
-      ();
+      return ua.indexOf('webkit') != -1;
     }
     ())
       return 'safari';
+    if (function(){
+      return ua.indexOf('msie') != -1 && $doc_0.documentMode >= 10;
+    }
+    ())
+      return 'ie10';
     if (function(){
       return ua.indexOf('msie') != -1 && $doc_0.documentMode >= 9;
     }
@@ -268,13 +256,6 @@ function gwtcanvasdemo(){
     ())
       return 'ie8';
     if (function(){
-      var result = /msie ([0-9]+)\.([0-9]+)/.exec(ua);
-      if (result && result.length == 3)
-        return makeVersion(result) >= 6000;
-    }
-    ())
-      return 'ie6';
-    if (function(){
       return ua.indexOf('gecko') != -1;
     }
     ())
@@ -282,7 +263,7 @@ function gwtcanvasdemo(){
     return 'unknown';
   }
   ;
-  values['user.agent'] = {gecko1_8:0, ie6:1, ie8:2, ie9:3, opera:4, safari:5};
+  values['user.agent'] = {gecko1_8:0, ie10:1, ie8:2, ie9:3, safari:4};
   gwtcanvasdemo.onScriptLoad = function(){
     if (frameInjected) {
       loadDone = true;
@@ -311,12 +292,11 @@ function gwtcanvasdemo(){
   $stats && $stats({moduleName:'gwtcanvasdemo', sessionId:$sessionId_0, subSystem:'startup', evtGroup:'bootstrap', millis:(new Date).getTime(), type:'selectingPermutation'});
   if (!isHostedMode()) {
     try {
-      unflattenKeylistIntoAnswers(['opera'], '3572AAD16A7E49A3A2AF72F23DE04C64');
-      unflattenKeylistIntoAnswers(['gecko1_8'], '520C9A6FF4D12119480D015AFBBE97E7');
-      unflattenKeylistIntoAnswers(['ie8'], '63FB7278BA267616D9B38350C50A4BCA');
-      unflattenKeylistIntoAnswers(['ie9'], '7E5E0725A1439964BC225D955C3F97B4');
-      unflattenKeylistIntoAnswers(['ie6'], '965898945139F639735EC369D8964289');
-      unflattenKeylistIntoAnswers(['safari'], '971CB91C0326733DB1C4979EA526179B');
+      unflattenKeylistIntoAnswers(['gecko1_8'], '098C7A773B27F6F90C1A6C62950C95FA');
+      unflattenKeylistIntoAnswers(['ie8'], '8BF4696B9A7590A5F6E2BA36BF547D12');
+      unflattenKeylistIntoAnswers(['safari'], '92FF51E1E877EF8B8555EE9554225859');
+      unflattenKeylistIntoAnswers(['ie9'], 'C309F99AA91C73B13C6603C8399F25B4');
+      unflattenKeylistIntoAnswers(['ie10'], 'DED476A6C23AFD7DD68CDD2D8750CE2E');
       strongName = answers[computePropValue('user.agent')];
       var idx = strongName.indexOf(':');
       if (idx != -1) {

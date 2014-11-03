@@ -1,0 +1,4312 @@
+<html>
+<head><meta charset="UTF-8" /><script>
+var $gwt_version = "2.6.0";
+var $wnd = parent;
+var $doc = $wnd.document;
+var $moduleName, $moduleBase;
+var $strongName = 'C309F99AA91C73B13C6603C8399F25B4';
+var $stats = $wnd.__gwtStatsEvent ? function(a) {return $wnd.__gwtStatsEvent(a);} : null,
+$sessionId = $wnd.__gwtStatsSessionId ? $wnd.__gwtStatsSessionId : null;
+$stats && $stats({moduleName:'gwtcanvasdemo',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalStart'});
+</script></head>
+<body>
+<script><!--
+var _, N80000000_longLit = {l:0, m:4193792, h:1048575}, P5_longLit = {l:5, m:0, h:0}, P7fffffff_longLit = {l:4194303, m:511, h:0}, seedTable = {}, Q$Object = 0, Q$String = 1, Q$JavaScriptException = 2, Q$Style$HasCssName = 3, Q$Style$TextAlign = 4, Q$DomEvent$Type = 5, Q$GestureStartHandler = 6, Q$LoadHandler = 7, Q$MouseMoveHandler = 8, Q$MouseOutHandler = 9, Q$TouchEndHandler = 10, Q$TouchMoveHandler = 11, Q$CloseHandler = 12, Q$HasAttachHandlers = 13, Q$EventHandler = 14, Q$HasHandlers = 15, Q$Ball = 16, Q$Logo = 17, Q$SpringObject = 18, Q$HasDirection$Direction = 19, Q$LongLibBase$LongEmul = 20, Q$SafeUri = 21, Q$SafeUriString = 22, Q$EventListener = 23, Q$HasVisibility = 24, Q$IsWidget = 25, Q$RootPanel = 26, Q$UIObject = 27, Q$Widget = 28, Q$SimpleEventBus$Command = 29, Q$UmbrellaException = 30, Q$Serializable = 31, Q$CharSequence = 32, Q$Comparable = 33, Q$Enum = 34, Q$Integer = 35, Q$Number = 36, Q$StackTraceElement = 37, Q$Throwable = 38, Q$List = 39, Q$Map = 40, Q$Map$Entry = 41, Q$Set = 42, Q$Pair = 43, CM$ = {};
+function newSeed(id_0){
+  return new seedTable[id_0];
+}
+
+function defineSeed(id_0, superSeed, castableTypeMap){
+  var seed = seedTable[id_0];
+  if (seed && !seed.___clazz$) {
+    _ = seed.prototype;
+  }
+   else {
+    !seed && (seed = seedTable[id_0] = function(){
+    }
+    );
+    _ = seed.prototype = superSeed < 0?{}:newSeed(superSeed);
+    _.castableTypeMap$ = castableTypeMap;
+  }
+  for (var i = 3; i < arguments.length; ++i) {
+    arguments[i].prototype = _;
+  }
+  if (seed.___clazz$) {
+    _.___clazz$ = seed.___clazz$;
+    seed.___clazz$ = null;
+  }
+}
+
+function makeCastMap(a){
+  var result = {};
+  for (var i = 0, c = a.length; i < c; ++i) {
+    result[a[i]] = 1;
+  }
+  return result;
+}
+
+function nullMethod(){
+}
+
+function Object_1(){
+}
+
+defineSeed(1, -1, CM$, Object_1);
+_.equals$ = function equals(other){
+  return this === other;
+}
+;
+_.getClass$ = function getClass_0(){
+  return this.___clazz$;
+}
+;
+_.hashCode$ = function hashCode_0(){
+  return getHashCode(this);
+}
+;
+_.toString$ = function toString_0(){
+  return this.___clazz$.typeName + '@' + toPowerOfTwoString(this.hashCode$());
+}
+;
+_.toString = function(){
+  return this.toString$();
+}
+;
+_.typeMarker$ = nullMethod;
+function equal(a, b){
+  return maskUndefined(a) === maskUndefined(b) || a != null && equals__devirtual$(a, b);
+}
+
+function checkArgument(expression){
+  if (!expression) {
+    throw new IllegalArgumentException_0;
+  }
+}
+
+function checkNotNull(reference){
+  if (reference == null) {
+    throw new NullPointerException_0;
+  }
+  return reference;
+}
+
+function computeArrayListCapacity(arraySize){
+  checkArgument(arraySize >= 0);
+  return saturatedCast(add_0(add_0(P5_longLit, fromInt(arraySize)), fromInt(~~(arraySize / 10))));
+}
+
+function newArrayList(elements){
+  var capacity, list;
+  checkNotNull(elements);
+  capacity = computeArrayListCapacity(elements.length);
+  list = new ArrayList_1(capacity);
+  addAll(list, elements);
+  return list;
+}
+
+function saturatedCast(value_0){
+  if (gt(value_0, P7fffffff_longLit)) {
+    return 2147483647;
+  }
+  if (lt(value_0, N80000000_longLit)) {
+    return -2147483648;
+  }
+  return value_0.l | value_0.m << 22;
+}
+
+function $getElement(this$static){
+  return $clinit_DOM() , this$static.element;
+}
+
+function $replaceNode(node, newNode){
+  var p = node.parentNode;
+  if (!p) {
+    return;
+  }
+  p.insertBefore(newNode, node);
+  p.removeChild(node);
+}
+
+function $setElement(this$static, elem){
+  this$static.element = elem;
+}
+
+function $setHeight(this$static, height){
+  ($clinit_DOM() , this$static.element).style['height'] = height;
+}
+
+function $setVisible(this$static){
+  setVisible(($clinit_DOM() , this$static.element), false);
+}
+
+function $setWidth(this$static, width_0){
+  ($clinit_DOM() , this$static.element).style['width'] = width_0;
+}
+
+function $sinkBitlessEvent(this$static, eventTypeName){
+  sinkBitlessEvent(($clinit_DOM() , this$static.element), eventTypeName);
+}
+
+function setVisible(elem, visible){
+  elem.style.display = visible?'':'none';
+  visible?elem.removeAttribute('aria-hidden'):elem.setAttribute('aria-hidden', 'true');
+}
+
+defineSeed(10, 1, makeCastMap([Q$HasVisibility, Q$UIObject]));
+_.toString$ = function toString_1(){
+  if (!this.element) {
+    return '(null handle)';
+  }
+  return ($clinit_DOM() , this.element).outerHTML;
+}
+;
+function $addDomHandler(this$static, handler, type_0){
+  var typeInt;
+  typeInt = getTypeInt(type_0.name_0);
+  typeInt == -1?$sinkBitlessEvent(this$static, type_0.name_0):this$static.eventsToSink == -1?sinkEvents(($clinit_DOM() , this$static.element), typeInt | (this$static.element.__eventBits || 0)):(this$static.eventsToSink |= typeInt);
+  return $addHandler_0(!this$static.handlerManager?(this$static.handlerManager = new HandlerManager_0(this$static)):this$static.handlerManager, type_0, handler);
+}
+
+function $addHandler(this$static, handler, type_0){
+  return $addHandler_0(!this$static.handlerManager?(this$static.handlerManager = new HandlerManager_0(this$static)):this$static.handlerManager, type_0, handler);
+}
+
+function $fireEvent(this$static, event_0){
+  !!this$static.handlerManager && $fireEvent_0(this$static.handlerManager, event_0);
+}
+
+function $onAttach(this$static){
+  var bitsToAdd;
+  if (this$static.attached) {
+    throw new IllegalStateException_0("Should only call onAttach when the widget is detached from the browser's document");
+  }
+  this$static.attached = true;
+  $clinit_DOM();
+  setEventListener(this$static.element, this$static);
+  bitsToAdd = this$static.eventsToSink;
+  this$static.eventsToSink = -1;
+  bitsToAdd > 0 && (this$static.eventsToSink == -1?sinkEvents(this$static.element, bitsToAdd | (this$static.element.__eventBits || 0)):(this$static.eventsToSink |= bitsToAdd));
+  this$static.doAttachChildren();
+  this$static.onLoad();
+}
+
+function $onBrowserEvent(this$static, event_0){
+  var related;
+  switch ($clinit_DOM() , $eventGetTypeInt(event_0.type)) {
+    case 16:
+    case 32:
+      related = event_0.relatedTarget;
+      if (!!related && isOrHasChildImpl(this$static.element, related)) {
+        return;
+      }
+
+  }
+  fireNativeEvent(event_0, this$static, this$static.element);
+}
+
+function $onDetach(this$static){
+  if (!this$static.attached) {
+    throw new IllegalStateException_0("Should only call onDetach when the widget is attached to the browser's document");
+  }
+  try {
+    this$static.doDetachChildren();
+  }
+   finally {
+    $clinit_DOM();
+    setEventListener(this$static.element, null);
+    this$static.attached = false;
+  }
+}
+
+function $removeFromParent(this$static){
+  if (!this$static.parent_0) {
+    $clinit_RootPanel();
+    $contains_0(widgetsToDetach, this$static) && detachNow(this$static);
+  }
+   else if (this$static.parent_0) {
+    $remove_0(this$static.parent_0, this$static);
+  }
+   else if (this$static.parent_0) {
+    throw new IllegalStateException_0("This widget's parent does not implement HasWidgets");
+  }
+}
+
+function $replaceElement(this$static, elem){
+  this$static.attached && ($clinit_DOM() , setEventListener(this$static.element, null));
+  !!this$static.element && $replaceNode(this$static.element, elem);
+  this$static.element = elem;
+  this$static.attached && ($clinit_DOM() , setEventListener(this$static.element, this$static));
+}
+
+function $setParent(this$static, parent_0){
+  var oldParent;
+  oldParent = this$static.parent_0;
+  if (!parent_0) {
+    try {
+      !!oldParent && oldParent.attached && $onDetach(this$static);
+    }
+     finally {
+      this$static.parent_0 = null;
+    }
+  }
+   else {
+    if (oldParent) {
+      throw new IllegalStateException_0('Cannot set a new parent without first clearing the old parent');
+    }
+    this$static.parent_0 = parent_0;
+    parent_0.attached && this$static.onAttach();
+  }
+}
+
+defineSeed(9, 10, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+_.doAttachChildren = function doAttachChildren(){
+}
+;
+_.doDetachChildren = function doDetachChildren(){
+}
+;
+_.onAttach = function onAttach(){
+  $onAttach(this);
+}
+;
+_.onBrowserEvent = function onBrowserEvent(event_0){
+  $onBrowserEvent(this, event_0);
+}
+;
+_.onLoad = function onLoad(){
+}
+;
+_.attached = false;
+_.eventsToSink = 0;
+defineSeed(8, 9, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+_.onAttach = function onAttach_0(){
+  var tabIndex;
+  $onAttach(this);
+  tabIndex = $getTabIndex(($clinit_DOM() , this.element));
+  -1 == tabIndex && (this.element.tabIndex = 0 , undefined);
+}
+;
+function $setCoordinateSpaceHeight(this$static){
+  ($clinit_DOM() , this$static.element).height = 400;
+}
+
+function $setCoordinateSpaceWidth(this$static){
+  ($clinit_DOM() , this$static.element).width = 600;
+}
+
+function Canvas_1(element){
+  $setElement(this, ($clinit_DOM() , element));
+}
+
+function createIfSupported(){
+  var element;
+  !detector && (detector = new Canvas$CanvasElementSupportDetectedMaybe_0);
+  element = $doc.createElement('canvas');
+  if (!element.getContext) {
+    return null;
+  }
+  return new Canvas_1(element);
+}
+
+defineSeed(7, 8, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), Canvas_1);
+var detector;
+defineSeed(12, 1, {});
+function Canvas$CanvasElementSupportDetectedMaybe_0(){
+}
+
+defineSeed(11, 12, {}, Canvas$CanvasElementSupportDetectedMaybe_0);
+function equals__devirtual$(this$static, other){
+  var maybeJsoInvocation;
+  return maybeJsoInvocation = this$static , isJavaObject(maybeJsoInvocation)?maybeJsoInvocation.equals$(other):maybeJsoInvocation === other;
+}
+
+function hashCode__devirtual$(this$static){
+  var maybeJsoInvocation;
+  return maybeJsoInvocation = this$static , isJavaObject(maybeJsoInvocation)?maybeJsoInvocation.hashCode$():getHashCode(maybeJsoInvocation);
+}
+
+function $set(this$static, i, value_0){
+  this$static[i] = value_0;
+}
+
+function $arc(this$static, x_0, y_0, radius, startAngle, endAngle, anticlockwise){
+  this$static.arc(x_0, y_0, radius, startAngle, endAngle, anticlockwise);
+}
+
+function $beginPath(this$static){
+  this$static.beginPath();
+}
+
+function $closePath(this$static){
+  this$static.closePath();
+}
+
+function $drawImage(this$static, image, dx, dy){
+  this$static.drawImage(image, dx, dy);
+}
+
+function $getImageData(this$static, sx, sy, sw, sh){
+  return this$static.getImageData(sx, sy, sw, sh);
+}
+
+function $putImageData(this$static, imagedata, x_0, y_0){
+  return this$static.putImageData(imagedata, x_0, y_0);
+}
+
+function $rotate(this$static, angle){
+  this$static.rotate(angle);
+}
+
+function $setFillStyleWeb(this$static, fillStyle){
+  this$static.fillStyle = fillStyle;
+}
+
+function $setStrokeStyleWeb(this$static, strokeStyle){
+  this$static.strokeStyle = strokeStyle;
+}
+
+function $translate(this$static, x_0, y_0){
+  this$static.translate(x_0, y_0);
+}
+
+function Duration_0(){
+  this.start_0 = currentTimeMillis();
+}
+
+function currentTimeMillis(){
+  return (new Date).getTime();
+}
+
+defineSeed(19, 1, {}, Duration_0);
+_.start_0 = 0;
+function $setStackTrace(stackTrace){
+  var c, copy, i;
+  copy = initDim(_3Ljava_lang_StackTraceElement_2_classLit, makeCastMap([Q$Serializable]), Q$StackTraceElement, stackTrace.length, 0);
+  for (i = 0 , c = stackTrace.length; i < c; ++i) {
+    if (!stackTrace[i]) {
+      throw new NullPointerException_0;
+    }
+    copy[i] = stackTrace[i];
+  }
+}
+
+defineSeed(24, 1, makeCastMap([Q$Serializable, Q$Throwable]));
+_.getMessage = function getMessage(){
+  return this.detailMessage;
+}
+;
+_.toString$ = function toString_2(){
+  var className, msg;
+  className = this.___clazz$.typeName;
+  msg = this.getMessage();
+  return msg != null?className + ': ' + msg:className;
+}
+;
+defineSeed(23, 24, makeCastMap([Q$Serializable, Q$Throwable]));
+function RuntimeException_0(){
+  $fillInStackTrace();
+}
+
+function RuntimeException_1(message){
+  this.detailMessage = message;
+  $fillInStackTrace();
+}
+
+function RuntimeException_2(message){
+  this.detailMessage = message;
+  $fillInStackTrace();
+}
+
+defineSeed(22, 23, makeCastMap([Q$Serializable, Q$Throwable]));
+function $clinit_JavaScriptException(){
+  $clinit_JavaScriptException = nullMethod;
+  NOT_SET = new Object_1;
+}
+
+function $ensureInit(this$static){
+  var exception, maybeJsoInvocation;
+  if (this$static.message_0 == null) {
+    exception = this$static.e === NOT_SET?null:this$static.e;
+    this$static.name_0 = exception == null?'null':instanceOfJso(exception)?getExceptionName0(dynamicCastJso(exception)):instanceOf(exception, Q$String)?'String':(maybeJsoInvocation = exception , isJavaObject(maybeJsoInvocation)?maybeJsoInvocation.___clazz$:Lcom_google_gwt_core_client_JavaScriptObject_2_classLit).typeName;
+    this$static.description = this$static.description + ': ' + (instanceOfJso(exception)?getExceptionDescription0(dynamicCastJso(exception)):exception + '');
+    this$static.message_0 = '(' + this$static.name_0 + ') ' + (instanceOfJso(exception)?$getProperties(dynamicCastJso(exception)):'') + this$static.description;
+  }
+}
+
+function JavaScriptException_0(e){
+  $clinit_JavaScriptException();
+  RuntimeException_0.call(this);
+  this.description = '';
+  this.e = e;
+  this.description = '';
+  $createStackTrace();
+}
+
+function getExceptionDescription0(e){
+  return e == null?null:e.message;
+}
+
+function getExceptionName0(e){
+  return e == null?null:e.name;
+}
+
+defineSeed(21, 22, makeCastMap([Q$JavaScriptException, Q$Serializable, Q$Throwable]), JavaScriptException_0);
+_.getMessage = function getMessage_0(){
+  $ensureInit(this);
+  return this.message_0;
+}
+;
+_.getThrown = function getThrown(){
+  return this.e === NOT_SET?null:this.e;
+}
+;
+var NOT_SET;
+function $push(this$static, value_0){
+  this$static[this$static.length] = value_0;
+}
+
+defineSeed(27, 1, {});
+function apply_0(jsFunction, thisObj, args){
+  return jsFunction.apply(thisObj, args);
+  var __0;
+}
+
+function dispose(d){
+  !!d && ($disposeEventSystem(d) , cleanupDOM(d.this$0));
+}
+
+function enter(){
+  var now_0;
+  if (entryDepth != 0) {
+    now_0 = currentTimeMillis();
+    if (now_0 - watchdogEntryDepthLastScheduled > 2000) {
+      watchdogEntryDepthLastScheduled = now_0;
+      watchdogEntryDepthTimerId = watchdogEntryDepthSchedule();
+    }
+  }
+  if (entryDepth++ == 0) {
+    $flushEntryCommands(($clinit_SchedulerImpl() , INSTANCE));
+    return true;
+  }
+  return false;
+}
+
+function entry_0(jsFunction){
+  return function(){
+    try {
+      return entry0(jsFunction, this, arguments);
+    }
+     catch (e) {
+      throw e;
+    }
+  }
+  ;
+}
+
+function entry0(jsFunction, thisObj, args){
+  var initialEntry;
+  initialEntry = enter();
+  try {
+    return apply_0(jsFunction, thisObj, args);
+  }
+   finally {
+    exit(initialEntry);
+  }
+}
+
+function exit(initialEntry){
+  initialEntry && $flushFinallyCommands(($clinit_SchedulerImpl() , INSTANCE));
+  --entryDepth;
+  if (initialEntry) {
+    if (watchdogEntryDepthTimerId != -1) {
+      watchdogEntryDepthCancel(watchdogEntryDepthTimerId);
+      watchdogEntryDepthTimerId = -1;
+    }
+  }
+}
+
+function getHashCode(o){
+  return o.$H || (o.$H = ++sNextHashId);
+}
+
+function registerEntry(){
+  return entry_0;
+}
+
+function reportToBrowser(e){
+  $wnd.setTimeout(function(){
+    throw e;
+  }
+  , 0);
+}
+
+function setTimeout_0(func, time){
+  return setTimeout0(func, time, null);
+}
+
+function watchdogEntryDepthCancel(timerId){
+  clearTimeout0(timerId);
+}
+
+function watchdogEntryDepthSchedule(){
+  return setTimeout_0(function(){
+    entryDepth != 0 && (entryDepth = 0);
+    watchdogEntryDepthTimerId = -1;
+  }
+  , 10);
+}
+
+var entryDepth = 0, sNextHashId = 0, watchdogEntryDepthLastScheduled = 0, watchdogEntryDepthTimerId = -1;
+function $clinit_SchedulerImpl(){
+  $clinit_SchedulerImpl = nullMethod;
+  INSTANCE = new SchedulerImpl_0;
+}
+
+function $flushEntryCommands(this$static){
+  var oldQueue, rescheduled;
+  if (this$static.entryCommands) {
+    rescheduled = null;
+    do {
+      oldQueue = this$static.entryCommands;
+      this$static.entryCommands = null;
+      rescheduled = runScheduledTasks(oldQueue, rescheduled);
+    }
+     while (this$static.entryCommands);
+    this$static.entryCommands = rescheduled;
+  }
+}
+
+function $flushFinallyCommands(this$static){
+  var oldQueue, rescheduled;
+  if (this$static.finallyCommands) {
+    rescheduled = null;
+    do {
+      oldQueue = this$static.finallyCommands;
+      this$static.finallyCommands = null;
+      rescheduled = runScheduledTasks(oldQueue, rescheduled);
+    }
+     while (this$static.finallyCommands);
+    this$static.finallyCommands = rescheduled;
+  }
+}
+
+function $flushPostEventPumpCommands(this$static){
+  var oldDeferred;
+  if (this$static.deferredCommands) {
+    oldDeferred = this$static.deferredCommands;
+    this$static.deferredCommands = null;
+    !this$static.incrementalCommands && (this$static.incrementalCommands = []);
+    runScheduledTasks(oldDeferred, this$static.incrementalCommands);
+  }
+  !!this$static.incrementalCommands && (this$static.incrementalCommands = $runRepeatingTasks(this$static.incrementalCommands));
+}
+
+function $isWorkQueued(this$static){
+  return !!this$static.deferredCommands || !!this$static.incrementalCommands;
+}
+
+function $maybeSchedulePostEventPumpCommands(this$static){
+  if (!this$static.shouldBeRunning) {
+    this$static.shouldBeRunning = true;
+    !this$static.flusher && (this$static.flusher = new SchedulerImpl$Flusher_0(this$static));
+    scheduleFixedDelayImpl(this$static.flusher, 1);
+    !this$static.rescue && (this$static.rescue = new SchedulerImpl$Rescuer_0(this$static));
+    scheduleFixedDelayImpl(this$static.rescue, 50);
+  }
+}
+
+function $runRepeatingTasks(tasks){
+  var canceledSomeTasks, duration, executedSomeTask, i, length_0, newTasks, t;
+  length_0 = tasks.length;
+  if (length_0 == 0) {
+    return null;
+  }
+  canceledSomeTasks = false;
+  duration = new Duration_0;
+  while (currentTimeMillis() - duration.start_0 < 100) {
+    executedSomeTask = false;
+    for (i = 0; i < length_0; i++) {
+      t = tasks[i];
+      if (!t) {
+        continue;
+      }
+      executedSomeTask = true;
+      if (!t[0].execute()) {
+        tasks[i] = null;
+        canceledSomeTasks = true;
+      }
+    }
+    if (!executedSomeTask) {
+      break;
+    }
+  }
+  if (canceledSomeTasks) {
+    newTasks = [];
+    for (i = 0; i < length_0; i++) {
+      !!tasks[i] && $push(newTasks, tasks[i]);
+    }
+    return newTasks.length == 0?null:newTasks;
+  }
+   else {
+    return tasks;
+  }
+}
+
+function $scheduleDeferred(this$static, cmd){
+  this$static.deferredCommands = push_0(this$static.deferredCommands, [cmd, false]);
+  $maybeSchedulePostEventPumpCommands(this$static);
+}
+
+function SchedulerImpl_0(){
+}
+
+function execute(cmd){
+  return cmd.execute();
+}
+
+function push_0(queue, task){
+  !queue && (queue = []);
+  $push(queue, task);
+  return queue;
+}
+
+function runScheduledTasks(tasks, rescheduled){
+  var e, i, j, t;
+  for (i = 0 , j = tasks.length; i < j; i++) {
+    t = tasks[i];
+    try {
+      t[1]?t[0].execute() && (rescheduled = push_0(rescheduled, t)):$execute(t[0]);
+    }
+     catch ($e0) {
+      $e0 = wrap($e0);
+      if (instanceOf($e0, Q$Throwable)) {
+        e = $e0;
+        reportToBrowser(instanceOf(e, Q$JavaScriptException)?dynamicCast(e, Q$JavaScriptException).getThrown():e);
+      }
+       else 
+        throw unwrap($e0);
+    }
+  }
+  return rescheduled;
+}
+
+function scheduleFixedDelayImpl(cmd, delayMs){
+  $clinit_SchedulerImpl();
+  setTimeout_0(function(){
+    var ret = $entry(execute)(cmd);
+    ret && setTimeout_0(arguments.callee, delayMs);
+  }
+  , delayMs);
+}
+
+defineSeed(29, 27, {}, SchedulerImpl_0);
+_.flushRunning = false;
+_.shouldBeRunning = false;
+var INSTANCE;
+function SchedulerImpl$Flusher_0(this$0){
+  this.this$0 = this$0;
+}
+
+defineSeed(30, 1, {}, SchedulerImpl$Flusher_0);
+_.execute = function execute_0(){
+  this.this$0.flushRunning = true;
+  $flushPostEventPumpCommands(this.this$0);
+  this.this$0.flushRunning = false;
+  return this.this$0.shouldBeRunning = $isWorkQueued(this.this$0);
+}
+;
+function SchedulerImpl$Rescuer_0(this$0){
+  this.this$0 = this$0;
+}
+
+defineSeed(31, 1, {}, SchedulerImpl$Rescuer_0);
+_.execute = function execute_1(){
+  this.this$0.flushRunning && scheduleFixedDelayImpl(this.this$0.flusher, 1);
+  return this.this$0.shouldBeRunning;
+}
+;
+function extractNameFromToString(fnToString){
+  var index_0, start_0, toReturn;
+  toReturn = '';
+  fnToString = $trim(fnToString);
+  index_0 = fnToString.indexOf('(');
+  start_0 = fnToString.indexOf('function') == 0?8:0;
+  if (index_0 == -1) {
+    index_0 = $indexOf_0(fnToString, String.fromCharCode(64));
+    start_0 = fnToString.indexOf('function ') == 0?9:0;
+  }
+  index_0 != -1 && (toReturn = $trim(fnToString.substr(start_0, index_0 - start_0)));
+  return toReturn.length > 0?toReturn:'anonymous';
+}
+
+function $collect(this$static){
+  var seen = {};
+  var toReturn = [];
+  var callee = arguments.callee.caller.caller;
+  while (callee) {
+    var name_0 = this$static.extractName(callee.toString());
+    toReturn.push(name_0);
+    var keyName = ':' + name_0;
+    var withThisName = seen[keyName];
+    if (withThisName) {
+      var i, j;
+      for (i = 0 , j = withThisName.length; i < j; i++) {
+        if (withThisName[i] === callee) {
+          return toReturn;
+        }
+      }
+    }
+    (withThisName || (seen[keyName] = [])).push(callee);
+    callee = callee.caller;
+  }
+  return toReturn;
+}
+
+function $createStackTrace(){
+  var i, j, stack_0, stackTrace;
+  stack_0 = [];
+  stackTrace = initDim(_3Ljava_lang_StackTraceElement_2_classLit, makeCastMap([Q$Serializable]), Q$StackTraceElement, stack_0.length, 0);
+  for (i = 0 , j = stackTrace.length; i < j; i++) {
+    stackTrace[i] = new StackTraceElement_0(stack_0[i]);
+  }
+  $setStackTrace(stackTrace);
+}
+
+function $fillInStackTrace(){
+  var i, j, stack_0, stackTrace;
+  stack_0 = $collect(new StackTraceCreator$Collector_0);
+  stackTrace = initDim(_3Ljava_lang_StackTraceElement_2_classLit, makeCastMap([Q$Serializable]), Q$StackTraceElement, stack_0.length, 0);
+  for (i = 0 , j = stackTrace.length; i < j; i++) {
+    stackTrace[i] = new StackTraceElement_0(stack_0[i]);
+  }
+  $setStackTrace(stackTrace);
+}
+
+function $getProperties(e){
+  var result = '';
+  try {
+    for (var prop in e) {
+      if (prop != 'name' && prop != 'message' && prop != 'toString') {
+        try {
+          var propValue = prop != '__gwt$exception'?e[prop]:'<skipped>';
+          result += '\n ' + prop + ': ' + propValue;
+        }
+         catch (ignored) {
+        }
+      }
+    }
+  }
+   catch (ignored) {
+  }
+  return result;
+}
+
+function StackTraceCreator$Collector_0(){
+}
+
+defineSeed(34, 1, {}, StackTraceCreator$Collector_0);
+_.extractName = function extractName(fnToString){
+  return extractNameFromToString(fnToString);
+}
+;
+defineSeed(35, 1, {});
+function $append(this$static, x_0){
+  this$static.string += x_0;
+}
+
+function StringBufferImplAppend_0(){
+}
+
+defineSeed(36, 35, {}, StringBufferImplAppend_0);
+_.string = '';
+function clearInterval0(timerId){
+  $wnd.clearInterval(timerId);
+}
+
+function clearTimeout0(timerId){
+  $wnd.clearTimeout(timerId);
+}
+
+function setInterval0(func, time){
+  var timerId = $wnd.setInterval(function(){
+    func();
+  }
+  , time);
+  return timerId;
+}
+
+function setTimeout0(func, time, disposeable){
+  var timerId = $wnd.setTimeout(function(){
+    func();
+    disposeable != null && dispose(disposeable);
+  }
+  , time);
+  return timerId;
+}
+
+function $appendChild(this$static, newChild){
+  return this$static.appendChild(newChild);
+}
+
+function $removeChild(this$static, oldChild){
+  return this$static.removeChild(oldChild);
+}
+
+function $getPropertyString(this$static, name_0){
+  return this$static[name_0] == null?null:String(this$static[name_0]);
+}
+
+function $getSubPixelScrollTop(this$static){
+  return this$static.scrollTop || 0;
+}
+
+function $setClassName(this$static, className){
+  this$static.className = className;
+}
+
+function $setPropertyString(this$static, name_0, value_0){
+  this$static[name_0] = value_0;
+}
+
+function $imgSetSrc(img, src_0){
+  img.src = src_0;
+}
+
+function $dispatchEvent(target, evt){
+  target.dispatchEvent(evt);
+}
+
+function $eventPreventDefault(evt){
+  evt.preventDefault();
+}
+
+function $setInnerText(elem, text_0){
+  elem.textContent = text_0 || '';
+}
+
+function $eventGetCurrentTarget(event_0){
+  return event_0.currentTarget || $wnd;
+}
+
+function $isRTL(elem){
+  return elem.ownerDocument.defaultView.getComputedStyle(elem, '').direction == 'rtl';
+}
+
+function $getAbsoluteLeft(elem){
+  var left;
+  left = $getBoundingClientRectLeft(elem) + $wnd.pageXOffset;
+  $isRTL(elem) && (left += $getParentOffsetDelta(elem));
+  return left | 0;
+}
+
+function $getBoundingClientRectLeft(elem){
+  try {
+    return elem.getBoundingClientRect().left;
+  }
+   catch (e) {
+    return 0;
+  }
+}
+
+function $getBoundingClientRectTop(elem){
+  try {
+    return elem.getBoundingClientRect().top;
+  }
+   catch (e) {
+    return 0;
+  }
+}
+
+function $getParentOffsetDelta(elem){
+  var offsetParent = elem.offsetParent;
+  if (offsetParent) {
+    return offsetParent.offsetWidth - offsetParent.clientWidth;
+  }
+  return 0;
+}
+
+function $getScrollLeft(elem){
+  var left;
+  left = (elem.scrollLeft || 0) | 0;
+  $isRTL(elem) && (left = -left);
+  return left;
+}
+
+function $getTabIndex(elem){
+  return elem.tabIndex < 65535?elem.tabIndex:-(elem.tabIndex % 65535) - 1;
+}
+
+function isOrHasChildImpl(parent_0, child){
+  if (parent_0.nodeType != 1 && parent_0.nodeType != 9) {
+    return parent_0 == child;
+  }
+  if (child.nodeType != 1) {
+    child = child.parentNode;
+    if (!child) {
+      return false;
+    }
+  }
+  if (parent_0.nodeType == 9) {
+    return parent_0 === child || parent_0.body && parent_0.body.contains(child);
+  }
+   else {
+    return parent_0 === child || parent_0.contains(child);
+  }
+}
+
+function $getElementById(this$static, elementId){
+  return this$static.getElementById(elementId);
+}
+
+function $setPropertyImpl(this$static, name_0, value_0){
+  this$static[name_0] = value_0;
+}
+
+function Enum_0(name_0, ordinal){
+  this.name_0 = name_0;
+  this.ordinal = ordinal;
+}
+
+defineSeed(53, 1, makeCastMap([Q$Serializable, Q$Comparable, Q$Enum]));
+_.equals$ = function equals_0(other){
+  return this === other;
+}
+;
+_.hashCode$ = function hashCode_1(){
+  return getHashCode(this);
+}
+;
+_.toString$ = function toString_3(){
+  return this.name_0;
+}
+;
+_.ordinal = 0;
+function $clinit_Style$TextAlign(){
+  $clinit_Style$TextAlign = nullMethod;
+  CENTER = new Style$TextAlign$1_0;
+  JUSTIFY = new Style$TextAlign$2_0;
+  LEFT = new Style$TextAlign$3_0;
+  RIGHT = new Style$TextAlign$4_0;
+  $VALUES = initValues(_3Lcom_google_gwt_dom_client_Style$TextAlign_2_classLit, makeCastMap([Q$Serializable]), Q$Style$TextAlign, [CENTER, JUSTIFY, LEFT, RIGHT]);
+}
+
+function Style$TextAlign_0(enum$name, enum$ordinal){
+  Enum_0.call(this, enum$name, enum$ordinal);
+}
+
+function values(){
+  $clinit_Style$TextAlign();
+  return $VALUES;
+}
+
+defineSeed(52, 53, makeCastMap([Q$Style$HasCssName, Q$Style$TextAlign, Q$Serializable, Q$Comparable, Q$Enum]));
+var $VALUES, CENTER, JUSTIFY, LEFT, RIGHT;
+function Style$TextAlign$1_0(){
+  Style$TextAlign_0.call(this, 'CENTER', 0);
+}
+
+defineSeed(54, 52, makeCastMap([Q$Style$HasCssName, Q$Style$TextAlign, Q$Serializable, Q$Comparable, Q$Enum]), Style$TextAlign$1_0);
+function Style$TextAlign$2_0(){
+  Style$TextAlign_0.call(this, 'JUSTIFY', 1);
+}
+
+defineSeed(55, 52, makeCastMap([Q$Style$HasCssName, Q$Style$TextAlign, Q$Serializable, Q$Comparable, Q$Enum]), Style$TextAlign$2_0);
+function Style$TextAlign$3_0(){
+  Style$TextAlign_0.call(this, 'LEFT', 2);
+}
+
+defineSeed(56, 52, makeCastMap([Q$Style$HasCssName, Q$Style$TextAlign, Q$Serializable, Q$Comparable, Q$Enum]), Style$TextAlign$3_0);
+function Style$TextAlign$4_0(){
+  Style$TextAlign_0.call(this, 'RIGHT', 3);
+}
+
+defineSeed(57, 52, makeCastMap([Q$Style$HasCssName, Q$Style$TextAlign, Q$Serializable, Q$Comparable, Q$Enum]), Style$TextAlign$4_0);
+defineSeed(60, 1, {});
+_.toString$ = function toString_4(){
+  return 'An event type';
+}
+;
+function $overrideSource(this$static, source){
+  this$static.source = source;
+}
+
+defineSeed(59, 60, {});
+_.dead = false;
+function $setNativeEvent(this$static, nativeEvent){
+  this$static.nativeEvent = nativeEvent;
+}
+
+function $setRelativeElement(this$static, relativeElem){
+  this$static.relativeElem = relativeElem;
+}
+
+function fireNativeEvent(nativeEvent, handlerSource, relativeElem){
+  var currentNative, currentRelativeElem, type_0, type$iterator, types;
+  if (registered) {
+    types = dynamicCast($unsafeGet(registered, nativeEvent.type), Q$List);
+    if (types) {
+      for (type$iterator = types.iterator(); type$iterator.hasNext();) {
+        type_0 = dynamicCast(type$iterator.next_0(), Q$DomEvent$Type);
+        currentNative = type_0.flyweight.nativeEvent;
+        currentRelativeElem = type_0.flyweight.relativeElem;
+        $setNativeEvent(type_0.flyweight, nativeEvent);
+        $setRelativeElement(type_0.flyweight, relativeElem);
+        $fireEvent(handlerSource, type_0.flyweight);
+        $setNativeEvent(type_0.flyweight, currentNative);
+        $setRelativeElement(type_0.flyweight, currentRelativeElem);
+      }
+    }
+  }
+}
+
+defineSeed(58, 59, {});
+_.getAssociatedType = function getAssociatedType(){
+  return this.getAssociatedType_0();
+}
+;
+var registered;
+defineSeed(63, 1, {});
+_.hashCode$ = function hashCode_2(){
+  return this.index_0;
+}
+;
+_.toString$ = function toString_5(){
+  return 'Event type';
+}
+;
+_.index_0 = 0;
+var nextHashCode = 0;
+function GwtEvent$Type_0(){
+  this.index_0 = ++nextHashCode;
+}
+
+defineSeed(62, 63, {}, GwtEvent$Type_0);
+function DomEvent$Type_0(eventName, flyweight){
+  var types;
+  GwtEvent$Type_0.call(this);
+  this.flyweight = flyweight;
+  !registered && (registered = new PrivateMap_0);
+  types = dynamicCast($unsafeGet(registered, eventName), Q$List);
+  if (!types) {
+    types = new ArrayList_0;
+    $unsafePut(registered, eventName, types);
+  }
+  types.add_0(this);
+  this.name_0 = eventName;
+}
+
+defineSeed(61, 62, makeCastMap([Q$DomEvent$Type]), DomEvent$Type_0);
+--></script>
+<script><!--
+function $clinit_GestureStartEvent(){
+  $clinit_GestureStartEvent = nullMethod;
+  TYPE = new DomEvent$Type_0('gesturestart', new GestureStartEvent_0);
+}
+
+function $dispatch(this$static){
+  $eventPreventDefault(this$static.nativeEvent);
+}
+
+function GestureStartEvent_0(){
+}
+
+defineSeed(64, 58, {}, GestureStartEvent_0);
+_.dispatch = function dispatch(handler){
+  $dispatch(this, dynamicCast(handler, Q$GestureStartHandler));
+}
+;
+_.getAssociatedType_0 = function getAssociatedType_0(){
+  return TYPE;
+}
+;
+var TYPE;
+defineSeed(65, 58, {});
+function $clinit_LoadEvent(){
+  $clinit_LoadEvent = nullMethod;
+  TYPE_0 = new DomEvent$Type_0('load', new LoadEvent_0);
+}
+
+function LoadEvent_0(){
+}
+
+defineSeed(66, 58, {}, LoadEvent_0);
+_.dispatch = function dispatch_0(handler){
+  $onLoad(dynamicCast(handler, Q$LoadHandler));
+}
+;
+_.getAssociatedType_0 = function getAssociatedType_1(){
+  return TYPE_0;
+}
+;
+var TYPE_0;
+defineSeed(67, 65, {});
+function $clinit_MouseMoveEvent(){
+  $clinit_MouseMoveEvent = nullMethod;
+  TYPE_1 = new DomEvent$Type_0('mousemove', new MouseMoveEvent_0);
+}
+
+function $dispatch_0(this$static, handler){
+  var _element, _relativeX, _element_1, _relativeY, e, e_0;
+  _element = ($clinit_DOM() , handler.this$0.canvas_0.element);
+  _relativeX = (e = this$static.nativeEvent , ((e.clientX || 0) | 0) - $getAbsoluteLeft(_element) + $getScrollLeft(_element) + (_element.ownerDocument , $wnd.pageXOffset | 0));
+  handler.this$0.mouseX = _relativeX;
+  _element_1 = handler.this$0.canvas_0.element;
+  _relativeY = (e_0 = this$static.nativeEvent , ((e_0.clientY || 0) | 0) - ($getBoundingClientRectTop(_element_1) + $wnd.pageYOffset | 0) + ($getSubPixelScrollTop(_element_1) | 0) + (_element_1.ownerDocument , $wnd.pageYOffset | 0));
+  handler.this$0.mouseY = _relativeY;
+}
+
+function MouseMoveEvent_0(){
+}
+
+defineSeed(68, 67, {}, MouseMoveEvent_0);
+_.dispatch = function dispatch_1(handler){
+  $dispatch_0(this, dynamicCast(handler, Q$MouseMoveHandler));
+}
+;
+_.getAssociatedType_0 = function getAssociatedType_2(){
+  return TYPE_1;
+}
+;
+var TYPE_1;
+function $clinit_MouseOutEvent(){
+  $clinit_MouseOutEvent = nullMethod;
+  TYPE_2 = new DomEvent$Type_0('mouseout', new MouseOutEvent_0);
+}
+
+function $dispatch_1(handler){
+  handler.this$0.mouseX = -200;
+  handler.this$0.mouseY = -200;
+}
+
+function MouseOutEvent_0(){
+}
+
+defineSeed(69, 67, {}, MouseOutEvent_0);
+_.dispatch = function dispatch_2(handler){
+  $dispatch_1(dynamicCast(handler, Q$MouseOutHandler));
+}
+;
+_.getAssociatedType_0 = function getAssociatedType_3(){
+  return TYPE_2;
+}
+;
+var TYPE_2;
+function $unsafeGet(this$static, key){
+  return this$static.map_0[key];
+}
+
+function $unsafePut(this$static, key, value_0){
+  this$static.map_0[key] = value_0;
+}
+
+function PrivateMap_0(){
+  this.map_0 = {};
+}
+
+defineSeed(70, 1, {}, PrivateMap_0);
+defineSeed(73, 65, {});
+function $clinit_TouchEndEvent(){
+  $clinit_TouchEndEvent = nullMethod;
+  TYPE_3 = new DomEvent$Type_0('touchend', new TouchEndEvent_0);
+}
+
+function $dispatch_2(this$static, handler){
+  $eventPreventDefault(this$static.nativeEvent);
+  handler.this$0.mouseX = -200;
+  handler.this$0.mouseY = -200;
+}
+
+function TouchEndEvent_0(){
+}
+
+defineSeed(72, 73, {}, TouchEndEvent_0);
+_.dispatch = function dispatch_3(handler){
+  $dispatch_2(this, dynamicCast(handler, Q$TouchEndHandler));
+}
+;
+_.getAssociatedType_0 = function getAssociatedType_4(){
+  return TYPE_3;
+}
+;
+var TYPE_3;
+function $clinit_TouchMoveEvent(){
+  $clinit_TouchMoveEvent = nullMethod;
+  TYPE_4 = new DomEvent$Type_0('touchmove', new TouchMoveEvent_0);
+}
+
+function $dispatch_3(this$static, handler){
+  $onTouchMove(handler, this$static);
+}
+
+function TouchMoveEvent_0(){
+}
+
+defineSeed(74, 73, {}, TouchMoveEvent_0);
+_.dispatch = function dispatch_4(handler){
+  $dispatch_3(this, dynamicCast(handler, Q$TouchMoveHandler));
+}
+;
+_.getAssociatedType_0 = function getAssociatedType_5(){
+  return TYPE_4;
+}
+;
+var TYPE_4;
+function CloseEvent_1(){
+}
+
+function fire(source){
+  var event_0;
+  if (TYPE_5) {
+    event_0 = new CloseEvent_1;
+    $fireEvent_0(source, event_0);
+  }
+}
+
+defineSeed(75, 59, {}, CloseEvent_1);
+_.dispatch = function dispatch_5(handler){
+  dynamicCast(handler, Q$CloseHandler);
+  detachWidgets();
+}
+;
+_.getAssociatedType = function getAssociatedType_6(){
+  return TYPE_5;
+}
+;
+var TYPE_5;
+function $addHandler_0(this$static, type_0, handler){
+  return new LegacyHandlerWrapper_0($doAdd(this$static.eventBus, type_0, handler));
+}
+
+function $fireEvent_0(this$static, event_0){
+  var e, oldSource;
+  !event_0.dead || (event_0.dead = false , event_0.source = null);
+  oldSource = event_0.source;
+  $overrideSource(event_0, this$static.source);
+  try {
+    $doFire(this$static.eventBus, event_0);
+  }
+   catch ($e0) {
+    $e0 = wrap($e0);
+    if (instanceOf($e0, Q$UmbrellaException)) {
+      e = $e0;
+      throw new UmbrellaException_2(e.causes);
+    }
+     else 
+      throw unwrap($e0);
+  }
+   finally {
+    oldSource == null?(event_0.dead = true , event_0.source = null):(event_0.source = oldSource);
+  }
+}
+
+function HandlerManager_0(source){
+  this.eventBus = new HandlerManager$Bus_0;
+  this.source = source;
+}
+
+defineSeed(76, 1, makeCastMap([Q$HasHandlers]), HandlerManager_0);
+defineSeed(79, 1, {});
+function $defer(this$static, command){
+  !this$static.deferredDeltas && (this$static.deferredDeltas = new ArrayList_0);
+  $add_4(this$static.deferredDeltas, command);
+}
+
+function $doAdd(this$static, type_0, handler){
+  if (!type_0) {
+    throw new NullPointerException_1('Cannot add a handler with a null type');
+  }
+  if (!handler) {
+    throw new NullPointerException_1('Cannot add a null handler');
+  }
+  this$static.firingDepth > 0?$defer(this$static, new SimpleEventBus$2_0(this$static, type_0, handler)):$doAddNow(this$static, type_0, handler);
+  return new SimpleEventBus$1_0;
+}
+
+function $doAddNow(this$static, type_0, handler){
+  var l_0;
+  l_0 = $ensureHandlerList(this$static, type_0);
+  l_0.add_0(handler);
+}
+
+function $doFire(this$static, event_0){
+  var causes, e, handler, handlers, it;
+  if (!event_0) {
+    throw new NullPointerException_1('Cannot fire null event');
+  }
+  try {
+    ++this$static.firingDepth;
+    handlers = $getDispatchList(this$static, event_0.getAssociatedType());
+    causes = null;
+    it = this$static.isReverseOrder?handlers.listIterator_0(handlers.size_1()):handlers.listIterator();
+    while (this$static.isReverseOrder?it.i > 0:it.i < it.this$0_0.size_1()) {
+      handler = this$static.isReverseOrder?$previous(it):$next_0(it);
+      try {
+        event_0.dispatch(dynamicCast(handler, Q$EventHandler));
+      }
+       catch ($e0) {
+        $e0 = wrap($e0);
+        if (instanceOf($e0, Q$Throwable)) {
+          e = $e0;
+          !causes && (causes = new HashSet_0);
+          $add_5(causes, e);
+        }
+         else 
+          throw unwrap($e0);
+      }
+    }
+    if (causes) {
+      throw new UmbrellaException_1(causes);
+    }
+  }
+   finally {
+    --this$static.firingDepth;
+    this$static.firingDepth == 0 && $handleQueuedAddsAndRemoves(this$static);
+  }
+}
+
+function $ensureHandlerList(this$static, type_0){
+  var handlers, sourceMap;
+  sourceMap = dynamicCast($get(this$static.map_0, type_0), Q$Map);
+  if (!sourceMap) {
+    sourceMap = new HashMap_0;
+    $put(this$static.map_0, type_0, sourceMap);
+  }
+  handlers = dynamicCast(sourceMap.nullSlot, Q$List);
+  if (!handlers) {
+    handlers = new ArrayList_0;
+    $putNullSlot(sourceMap, handlers);
+  }
+  return handlers;
+}
+
+function $getDispatchList(this$static, type_0){
+  var directHandlers;
+  directHandlers = $getHandlerList(this$static, type_0);
+  return directHandlers;
+}
+
+function $getHandlerList(this$static, type_0){
+  var handlers, sourceMap;
+  sourceMap = dynamicCast($get(this$static.map_0, type_0), Q$Map);
+  if (!sourceMap) {
+    return $clinit_Collections() , $clinit_Collections() , EMPTY_LIST;
+  }
+  handlers = dynamicCast(sourceMap.nullSlot, Q$List);
+  if (!handlers) {
+    return $clinit_Collections() , $clinit_Collections() , EMPTY_LIST;
+  }
+  return handlers;
+}
+
+function $handleQueuedAddsAndRemoves(this$static){
+  var c, c$iterator;
+  if (this$static.deferredDeltas) {
+    try {
+      for (c$iterator = new AbstractList$IteratorImpl_0(this$static.deferredDeltas); c$iterator.i < c$iterator.this$0_0.size_1();) {
+        c = dynamicCast($next_0(c$iterator), Q$SimpleEventBus$Command);
+        $doAddNow(c.this$0, c.val$type, c.val$handler);
+      }
+    }
+     finally {
+      this$static.deferredDeltas = null;
+    }
+  }
+}
+
+defineSeed(78, 79, {});
+_.firingDepth = 0;
+_.isReverseOrder = false;
+function HandlerManager$Bus_0(){
+  this.map_0 = new HashMap_0;
+  this.isReverseOrder = false;
+}
+
+defineSeed(77, 78, {}, HandlerManager$Bus_0);
+function LegacyHandlerWrapper_0(){
+}
+
+defineSeed(80, 1, {}, LegacyHandlerWrapper_0);
+function UmbrellaException_1(causes){
+  RuntimeException_2.call(this, makeMessage(causes), makeCause(causes));
+  this.causes = causes;
+}
+
+function makeCause(causes){
+  var iterator;
+  iterator = causes.iterator();
+  if (!iterator.hasNext()) {
+    return null;
+  }
+  return dynamicCast(iterator.next_0(), Q$Throwable);
+}
+
+function makeMessage(causes){
+  var b, count, first, t, t$iterator;
+  count = causes.size_1();
+  if (count == 0) {
+    return null;
+  }
+  b = new StringBuilder_0(count == 1?'Exception caught: ':count + ' exceptions caught: ');
+  first = true;
+  for (t$iterator = causes.iterator(); t$iterator.hasNext();) {
+    t = dynamicCast(t$iterator.next_0(), Q$Throwable);
+    first?(first = false):($append(b.impl, '; ') , b);
+    $append_0(b, t.getMessage());
+  }
+  return b.impl.string;
+}
+
+defineSeed(82, 22, makeCastMap([Q$UmbrellaException, Q$Serializable, Q$Throwable]), UmbrellaException_1);
+function UmbrellaException_2(causes){
+  UmbrellaException_1.call(this, causes);
+}
+
+defineSeed(81, 82, makeCastMap([Q$UmbrellaException, Q$Serializable, Q$Throwable]), UmbrellaException_2);
+function $update(this$static){
+  var d;
+  d = sub_0(this$static.goal, this$static.pos);
+  d.x_0 = d.x_0 * 0.1;
+  d.y_0 = d.y_0 * 0.1;
+  $add_0(this$static.vel, d);
+  $mult(this$static.vel);
+  $add_0(this$static.pos, this$static.vel);
+}
+
+function SpringObject_0(start_0){
+  var _vector, _vector_1, _vector_2;
+  _vector = new Vector_1(start_0);
+  this.pos = _vector;
+  _vector_1 = new Vector_0(0, 0);
+  this.vel = _vector_1;
+  _vector_2 = new Vector_1(start_0);
+  this.goal = _vector_2;
+}
+
+defineSeed(84, 1, makeCastMap([Q$SpringObject]));
+function Ball_0(x_0, y_0, radius, color_0){
+  Ball_1.call(this, new Vector_0(x_0, y_0), radius, color_0);
+}
+
+function Ball_1(start_0, radius, color_0){
+  var _vector;
+  SpringObject_0.call(this, start_0);
+  this.color_0 = color_0;
+  this.posZ = 0;
+  this.velZ = 0;
+  this.goalZ = 0;
+  this.radius = radius;
+  _vector = new Vector_1(start_0);
+  this.startPos = _vector;
+  this.startRadius = radius;
+}
+
+defineSeed(83, 84, makeCastMap([Q$Ball, Q$SpringObject]), Ball_0);
+_.goalZ = 0;
+_.posZ = 0;
+_.radius = 0;
+_.startRadius = 0;
+_.velZ = 0;
+function $draw(this$static, context){
+  var it, it$iterator;
+  for (it$iterator = new AbstractList$IteratorImpl_0(this$static.balls); it$iterator.i < it$iterator.this$0_0.size_1();) {
+    it = dynamicCast($next_0(it$iterator), Q$Ball);
+    $setFillStyleWeb(context, it.color_0);
+    $beginPath(context);
+    $arc(context, it.pos.x_0, it.pos.y_0, it.radius, 0, 6.283185307179586, true);
+    $closePath(context);
+    context.fill();
+  }
+}
+
+function $update_0(this$static, mouseX, mouseY){
+  var _lessThan, _magSquared, _sub, ball, ball$iterator, d, dh, dist, dgZ, aZ, _xifexpression;
+  d = new Vector_0(0, 0);
+  for (ball$iterator = new AbstractList$IteratorImpl_0(this$static.balls); ball$iterator.i < ball$iterator.this$0_0.size_1();) {
+    ball = dynamicCast($next_0(ball$iterator), Q$Ball);
+    d.x_0 = mouseX - ball.pos.x_0;
+    d.y_0 = mouseY - ball.pos.y_0;
+    _magSquared = d.x_0 * d.x_0 + d.y_0 * d.y_0;
+    _lessThan = _magSquared < 10000;
+    if (_lessThan) {
+      _sub = sub_0(ball.pos, d);
+      ball.goal = _sub;
+    }
+     else {
+      $set_0(ball.goal, ball.startPos);
+    }
+    $update(ball);
+    dh = sub_0(ball.startPos, ball.pos);
+    dist = dh.x_0 == 0 && dh.y_0 == 0?0:sqrt_0(dh.x_0 * dh.x_0 + dh.y_0 * dh.y_0);
+    ball.goalZ = dist / 100 + 1;
+    dgZ = ball.goalZ - ball.posZ;
+    aZ = dgZ * 0.1;
+    ball.velZ = ball.velZ + aZ;
+    ball.velZ = ball.velZ * 0.8;
+    ball.posZ = ball.posZ + ball.velZ;
+    ball.radius = ball.startRadius * ball.posZ;
+    ball.radius < 1?(_xifexpression = 1):(_xifexpression = ball.radius);
+    ball.radius = _xifexpression;
+  }
+}
+
+function BallGroup_0(){
+  var _ball, _ball_1, _ball_10, _ball_11, _ball_12, _ball_13, _ball_14, _ball_15, _ball_16, _ball_17, _ball_18, _ball_19, _ball_2, _ball_20, _ball_21, _ball_22, _ball_23, _ball_24, _ball_25, _ball_26, _ball_27, _ball_28, _ball_29, _ball_3, _ball_30, _ball_31, _ball_32, _ball_33, _ball_34, _ball_35, _ball_36, _ball_37, _ball_38, _ball_39, _ball_4, _ball_40, _ball_41, _ball_42, _ball_43, _ball_44, _ball_45, _ball_46, _ball_47, _ball_48, _ball_49, _ball_5, _ball_50, _ball_51, _ball_52, _ball_53, _ball_54, _ball_55, _ball_56, _ball_57, _ball_58, _ball_59, _ball_6, _ball_60, _ball_61, _ball_62, _ball_63, _ball_64, _ball_7, _ball_8, _ball_9, _newArrayList, ball, ball$iterator;
+  _newArrayList = newArrayList(initValues(_3Lcom_google_gwt_gwtcanvasdemo_client_Ball_2_classLit, makeCastMap([Q$Serializable]), Q$Ball, []));
+  this.balls = _newArrayList;
+  _ball = new Ball_0(202, 78, 9, '#ed9d33');
+  $add_4(this.balls, _ball);
+  _ball_1 = new Ball_0(348, 83, 9, '#d44d61');
+  $add_4(this.balls, _ball_1);
+  _ball_2 = new Ball_0(256, 69, 9, '#4f7af2');
+  $add_4(this.balls, _ball_2);
+  _ball_3 = new Ball_0(214, 59, 9, '#ef9a1e');
+  $add_4(this.balls, _ball_3);
+  _ball_4 = new Ball_0(265, 36, 9, '#4976f3');
+  $add_4(this.balls, _ball_4);
+  _ball_5 = new Ball_0(300, 78, 9, '#269230');
+  $add_4(this.balls, _ball_5);
+  _ball_6 = new Ball_0(294, 59, 9, '#1f9e2c');
+  $add_4(this.balls, _ball_6);
+  _ball_7 = new Ball_0(45, 88, 9, '#1c48dd');
+  $add_4(this.balls, _ball_7);
+  _ball_8 = new Ball_0(268, 52, 9, '#2a56ea');
+  $add_4(this.balls, _ball_8);
+  _ball_9 = new Ball_0(73, 83, 9, '#3355d8');
+  $add_4(this.balls, _ball_9);
+  _ball_10 = new Ball_0(294, 6, 9, '#36b641');
+  $add_4(this.balls, _ball_10);
+  _ball_11 = new Ball_0(235, 62, 9, '#2e5def');
+  $add_4(this.balls, _ball_11);
+  _ball_12 = new Ball_0(353, 42, 8, '#d53747');
+  $add_4(this.balls, _ball_12);
+  _ball_13 = new Ball_0(336, 52, 8, '#eb676f');
+  $add_4(this.balls, _ball_13);
+  _ball_14 = new Ball_0(208, 41, 8, '#f9b125');
+  $add_4(this.balls, _ball_14);
+  _ball_15 = new Ball_0(321, 70, 8, '#de3646');
+  $add_4(this.balls, _ball_15);
+  _ball_16 = new Ball_0(8, 60, 8, '#2a59f0');
+  $add_4(this.balls, _ball_16);
+  _ball_17 = new Ball_0(180, 81, 8, '#eb9c31');
+  $add_4(this.balls, _ball_17);
+  _ball_18 = new Ball_0(146, 65, 8, '#c41731');
+  $add_4(this.balls, _ball_18);
+  _ball_19 = new Ball_0(145, 49, 8, '#d82038');
+  $add_4(this.balls, _ball_19);
+  _ball_20 = new Ball_0(246, 34, 8, '#5f8af8');
+  $add_4(this.balls, _ball_20);
+  _ball_21 = new Ball_0(169, 69, 8, '#efa11e');
+  $add_4(this.balls, _ball_21);
+  _ball_22 = new Ball_0(273, 99, 8, '#2e55e2');
+  $add_4(this.balls, _ball_22);
+  _ball_23 = new Ball_0(248, 120, 8, '#4167e4');
+  $add_4(this.balls, _ball_23);
+  _ball_24 = new Ball_0(294, 41, 8, '#0b991a');
+  $add_4(this.balls, _ball_24);
+  _ball_25 = new Ball_0(267, 114, 8, '#4869e3');
+  $add_4(this.balls, _ball_25);
+  _ball_26 = new Ball_0(78, 67, 8, '#3059e3');
+  $add_4(this.balls, _ball_26);
+  _ball_27 = new Ball_0(294, 23, 8, '#10a11d');
+  $add_4(this.balls, _ball_27);
+  _ball_28 = new Ball_0(117, 83, 8, '#cf4055');
+  $add_4(this.balls, _ball_28);
+  _ball_29 = new Ball_0(137, 80, 8, '#cd4359');
+  $add_4(this.balls, _ball_29);
+  _ball_30 = new Ball_0(14, 71, 8, '#2855ea');
+  $add_4(this.balls, _ball_30);
+  _ball_31 = new Ball_0(331, 80, 8, '#ca273c');
+  $add_4(this.balls, _ball_31);
+  _ball_32 = new Ball_0(25, 82, 8, '#2650e1');
+  $add_4(this.balls, _ball_32);
+  _ball_33 = new Ball_0(233, 46, 8, '#4a7bf9');
+  $add_4(this.balls, _ball_33);
+  _ball_34 = new Ball_0(73, 13, 8, '#3d65e7');
+  $add_4(this.balls, _ball_34);
+  _ball_35 = new Ball_0(327, 35, 6, '#f47875');
+  $add_4(this.balls, _ball_35);
+  _ball_36 = new Ball_0(319, 46, 6, '#f36764');
+  $add_4(this.balls, _ball_36);
+  _ball_37 = new Ball_0(256, 81, 6, '#1d4eeb');
+  $add_4(this.balls, _ball_37);
+  _ball_38 = new Ball_0(244, 88, 6, '#698bf1');
+  $add_4(this.balls, _ball_38);
+  _ball_39 = new Ball_0(194, 32, 6, '#fac652');
+  $add_4(this.balls, _ball_39);
+  _ball_40 = new Ball_0(97, 56, 6, '#ee5257');
+  $add_4(this.balls, _ball_40);
+  _ball_41 = new Ball_0(105, 75, 6, '#cf2a3f');
+  $add_4(this.balls, _ball_41);
+  _ball_42 = new Ball_0(42, 4, 6, '#5681f5');
+  $add_4(this.balls, _ball_42);
+  _ball_43 = new Ball_0(10, 27, 6, '#4577f6');
+  $add_4(this.balls, _ball_43);
+  _ball_44 = new Ball_0(166, 55, 6, '#f7b326');
+  $add_4(this.balls, _ball_44);
+  _ball_45 = new Ball_0(266, 88, 6, '#2b58e8');
+  $add_4(this.balls, _ball_45);
+  _ball_46 = new Ball_0(178, 34, 6, '#facb5e');
+  $add_4(this.balls, _ball_46);
+  _ball_47 = new Ball_0(100, 65, 6, '#e02e3d');
+  $add_4(this.balls, _ball_47);
+  _ball_48 = new Ball_0(343, 32, 6, '#f16d6f');
+  $add_4(this.balls, _ball_48);
+  _ball_49 = new Ball_0(59, 5, 6, '#507bf2');
+  $add_4(this.balls, _ball_49);
+  _ball_50 = new Ball_0(27, 9, 6, '#5683f7');
+  $add_4(this.balls, _ball_50);
+  _ball_51 = new Ball_0(233, 116, 6, '#3158e2');
+  $add_4(this.balls, _ball_51);
+  _ball_52 = new Ball_0(123, 32, 6, '#f0696c');
+  $add_4(this.balls, _ball_52);
+  _ball_53 = new Ball_0(6, 38, 6, '#3769f6');
+  $add_4(this.balls, _ball_53);
+  _ball_54 = new Ball_0(63, 62, 6, '#6084ef');
+  $add_4(this.balls, _ball_54);
+  _ball_55 = new Ball_0(6, 49, 6, '#2a5cf4');
+  $add_4(this.balls, _ball_55);
+  _ball_56 = new Ball_0(108, 36, 6, '#f4716e');
+  $add_4(this.balls, _ball_56);
+  _ball_57 = new Ball_0(169, 43, 6, '#f8c247');
+  $add_4(this.balls, _ball_57);
+  _ball_58 = new Ball_0(137, 37, 6, '#e74653');
+  $add_4(this.balls, _ball_58);
+  _ball_59 = new Ball_0(318, 58, 6, '#ec4147');
+  $add_4(this.balls, _ball_59);
+  _ball_60 = new Ball_0(226, 100, 5, '#4876f1');
+  $add_4(this.balls, _ball_60);
+  _ball_61 = new Ball_0(101, 46, 5, '#ef5c5c');
+  $add_4(this.balls, _ball_61);
+  _ball_62 = new Ball_0(226, 108, 5, '#2552ea');
+  $add_4(this.balls, _ball_62);
+  _ball_63 = new Ball_0(17, 17, 5, '#4779f7');
+  $add_4(this.balls, _ball_63);
+  _ball_64 = new Ball_0(232, 93, 5, '#4b78f1');
+  $add_4(this.balls, _ball_64);
+  for (ball$iterator = new AbstractList$IteratorImpl_0(this.balls); ball$iterator.i < ball$iterator.this$0_0.size_1();) {
+    ball = dynamicCast($next_0(ball$iterator), Q$Ball);
+    ball.pos.x_0 = 174 + 0.699999988079071 * ball.pos.x_0;
+    ball.pos.y_0 = 154.5 + 0.699999988079071 * ball.pos.y_0;
+    ball.radius = 0.699999988079071 * ball.radius;
+    ball.startRadius = 0.699999988079071 * ball.startRadius;
+    ball.startPos.x_0 = ball.pos.x_0;
+    ball.startPos.y_0 = ball.pos.y_0;
+  }
+}
+
+defineSeed(85, 1, {}, BallGroup_0);
+function $cancel(this$static){
+  if (!this$static.timerId) {
+    return;
+  }
+  ++this$static.cancelCounter;
+  this$static.isRepeating?clearInterval0(this$static.timerId.value_0):clearTimeout0(this$static.timerId.value_0);
+  this$static.timerId = null;
+}
+
+function createCallback(timer, cancelCounter){
+  return $entry(function(){
+    timer.fire(cancelCounter);
+  }
+  );
+}
+
+defineSeed(87, 1, {});
+_.fire = function fire_0(scheduleCancelCounter){
+  if (scheduleCancelCounter != this.cancelCounter) {
+    return;
+  }
+  this.isRepeating || (this.timerId = null);
+  $setFillStyleWeb(this.backBufferContext, this.redrawColor);
+  this.backBufferContext.fillRect(0, 0, 600, 400);
+  $update_2(this.logoGroup, this.mouseX, this.mouseY);
+  $update_0(this.ballGroup, this.mouseX, this.mouseY);
+  $draw_2(this.logoGroup, this.backBufferContext);
+  $draw(this.ballGroup, this.backBufferContext);
+  $update_1(this.lens);
+  $draw_0(this.lens, this.backBufferContext, this.context);
+}
+;
+_.cancelCounter = 0;
+_.isRepeating = false;
+_.timerId = null;
+function $onModuleLoad(this$static){
+  var _ballGroup, _context2d, _context2d_1, _createIfSupported, _createIfSupported_1, _equals, _get, _get_1, _label, _lens, _logoGroup, _plus, _plus_1, _vector, _vector_1, _function, _function_1, _function_2, _function_3, _function_4;
+  _createIfSupported = createIfSupported();
+  this$static.canvas_0 = _createIfSupported;
+  _createIfSupported_1 = createIfSupported();
+  this$static.backBuffer = _createIfSupported_1;
+  _equals = equal(this$static.canvas_0, null);
+  if (_equals) {
+    _get = get_0('canvasholder');
+    _label = new Label_0;
+    $add_1(_get, _label, $getElement(_get));
+    return;
+  }
+  _plus = valueOf(600) + 'px';
+  $setWidth(this$static.canvas_0, _plus);
+  _plus_1 = valueOf(400) + 'px';
+  $setHeight(this$static.canvas_0, _plus_1);
+  $setCoordinateSpaceWidth(this$static.canvas_0);
+  $setCoordinateSpaceHeight(this$static.canvas_0);
+  $setCoordinateSpaceWidth(this$static.backBuffer);
+  $setCoordinateSpaceHeight(this$static.backBuffer);
+  _get_1 = get_0('canvasholder');
+  $add_2(_get_1, this$static.canvas_0);
+  _context2d = ($clinit_DOM() , this$static.canvas_0.element).getContext('2d');
+  this$static.context = _context2d;
+  _context2d_1 = this$static.backBuffer.element.getContext('2d');
+  this$static.backBufferContext = _context2d_1;
+  _logoGroup = new LogoGroup_0;
+  this$static.logoGroup = _logoGroup;
+  _ballGroup = new BallGroup_0;
+  this$static.ballGroup = _ballGroup;
+  _vector = new Vector_0(320, 150);
+  _vector_1 = new Vector_0(1, 1);
+  _lens = new Lens_0(35, _vector, _vector_1);
+  this$static.lens = _lens;
+  _function = new GwtCanvasDemo$1_0(this$static);
+  $addDomHandler(this$static.canvas_0, _function, ($clinit_MouseMoveEvent() , $clinit_MouseMoveEvent() , TYPE_1));
+  _function_1 = new GwtCanvasDemo$2_0(this$static);
+  $addDomHandler(this$static.canvas_0, _function_1, ($clinit_MouseOutEvent() , $clinit_MouseOutEvent() , TYPE_2));
+  _function_2 = new GwtCanvasDemo$3_0(this$static);
+  $addDomHandler(this$static.canvas_0, _function_2, ($clinit_TouchMoveEvent() , $clinit_TouchMoveEvent() , TYPE_4));
+  _function_3 = new GwtCanvasDemo$4_0(this$static);
+  $addDomHandler(this$static.canvas_0, _function_3, ($clinit_TouchEndEvent() , $clinit_TouchEndEvent() , TYPE_3));
+  _function_4 = new GwtCanvasDemo$5_0;
+  $addDomHandler(this$static.canvas_0, _function_4, ($clinit_GestureStartEvent() , $clinit_GestureStartEvent() , TYPE));
+  !!this$static.timerId && $cancel(this$static);
+  this$static.isRepeating = true;
+  this$static.timerId = valueOf(setInterval0(createCallback(this$static, this$static.cancelCounter), 25));
+}
+
+function GwtCanvasDemo_0(){
+  this.redrawColor = 'rgba(255,255,255,0.6)';
+}
+
+defineSeed(86, 87, {}, GwtCanvasDemo_0);
+_.mouseX = 0;
+_.mouseY = 0;
+function GwtCanvasDemo$1_0(this$0){
+  this.this$0 = this$0;
+}
+
+defineSeed(88, 1, makeCastMap([Q$MouseMoveHandler, Q$EventHandler]), GwtCanvasDemo$1_0);
+function GwtCanvasDemo$2_0(this$0){
+  this.this$0 = this$0;
+}
+
+defineSeed(89, 1, makeCastMap([Q$MouseOutHandler, Q$EventHandler]), GwtCanvasDemo$2_0);
+function $onTouchMove(this$static, it){
+  var _element, _element_1, _greaterThan, _length, _relativeX, _relativeY, _touches, _touches_1, touch;
+  $eventPreventDefault(it.nativeEvent);
+  _touches = it.nativeEvent.touches;
+  _length = _touches.length;
+  _greaterThan = _length > 0;
+  if (_greaterThan) {
+    _touches_1 = it.nativeEvent.touches;
+    touch = _touches_1[0];
+    _element = ($clinit_DOM() , this$static.this$0.canvas_0.element);
+    _relativeX = ((touch.clientX || 0) | 0) - $getAbsoluteLeft(_element) + $getScrollLeft(_element) + (_element.ownerDocument , $wnd.pageXOffset | 0);
+    this$static.this$0.mouseX = _relativeX;
+    _element_1 = this$static.this$0.canvas_0.element;
+    _relativeY = ((touch.clientY || 0) | 0) - ($getBoundingClientRectTop(_element_1) + $wnd.pageYOffset | 0) + ($getSubPixelScrollTop(_element_1) | 0) + (_element_1.ownerDocument , $wnd.pageYOffset | 0);
+    this$static.this$0.mouseY = _relativeY;
+  }
+  $eventPreventDefault(it.nativeEvent);
+}
+
+function GwtCanvasDemo$3_0(this$0){
+  this.this$0 = this$0;
+}
+
+defineSeed(90, 1, makeCastMap([Q$TouchMoveHandler, Q$EventHandler]), GwtCanvasDemo$3_0);
+function GwtCanvasDemo$4_0(this$0){
+  this.this$0 = this$0;
+}
+
+defineSeed(91, 1, makeCastMap([Q$TouchEndHandler, Q$EventHandler]), GwtCanvasDemo$4_0);
+function GwtCanvasDemo$5_0(){
+}
+
+defineSeed(92, 1, makeCastMap([Q$GestureStartHandler, Q$EventHandler]), GwtCanvasDemo$5_0);
+function $draw_0(this$static, back_0, front){
+  var _canvas, _get, _get_1, _get_2, _key, _multiply, _multiply_1, _value, backData, backPixels, frontData, frontPixels, it, it$iterator;
+  _canvas = back_0.canvas;
+  front.drawImage(_canvas, 0, 0);
+  frontData = $getImageData(front, round_int(this$static.pos.x_0 - this$static.radius), round_int(this$static.pos.y_0 - this$static.radius), 2 * this$static.radius, 2 * this$static.radius);
+  frontPixels = frontData.data;
+  backData = $getImageData(back_0, round_int(this$static.pos.x_0 - this$static.radius), round_int(this$static.pos.y_0 - this$static.radius), 2 * this$static.radius, 2 * this$static.radius);
+  backPixels = backData.data;
+  for (it$iterator = new AbstractList$IteratorImpl_0(this$static.lensArray); it$iterator.i < it$iterator.this$0_0.size_1();) {
+    it = dynamicCast($next_0(it$iterator), Q$Pair);
+    _key = it.k;
+    _multiply = 4 * _key.value_0;
+    _value = it.v;
+    _multiply_1 = 4 * _value.value_0;
+    _get = backPixels[_multiply_1] || 0;
+    $set(frontPixels, _multiply, _get);
+    _get_1 = backPixels[_multiply_1 + 1] || 0;
+    $set(frontPixels, _multiply + 1, _get_1);
+    _get_2 = backPixels[_multiply_1 + 2] || 0;
+    $set(frontPixels, _multiply + 2, _get_2);
+  }
+  $putImageData(front, frontData, round_int(this$static.pos.x_0 - this$static.radius), round_int(this$static.pos.y_0 - this$static.radius));
+  $setStrokeStyleWeb(front, this$static.strokeStyle_0);
+  $beginPath(front);
+  $arc(front, this$static.pos.x_0, this$static.pos.y_0, this$static.radius, 0, 6.283185307179586, true);
+  $closePath(front);
+  front.stroke();
+}
+
+function $update_1(this$static){
+  (this$static.pos.x_0 + this$static.radius + this$static.vel.x_0 > this$static.width_0 || this$static.pos.x_0 - this$static.radius + this$static.vel.x_0 < 0) && (this$static.vel.x_0 = -this$static.vel.x_0);
+  (this$static.pos.y_0 + this$static.radius + this$static.vel.y_0 > this$static.height_0 || this$static.pos.y_0 - this$static.radius + this$static.vel.y_0 < 0) && (this$static.vel.y_0 = -this$static.vel.y_0);
+  this$static.pos.x_0 = this$static.pos.x_0 + this$static.vel.x_0;
+  this$static.pos.y_0 = this$static.pos.y_0 + this$static.vel.y_0;
+}
+
+function Lens_0(radius, initPos, vel){
+  var _mappedTo, _upTo, _upTo_1, a, b, dstIdx, s, srcIdx, x_0, x$iterator, y_0, y$iterator, z_0;
+  this.lensArray = newArrayList(initValues(_3Lorg_eclipse_xtext_xbase_lib_Pair_2_classLit, makeCastMap([Q$Serializable]), Q$Pair, []));
+  this.strokeStyle_0 = '#333300';
+  this.radius = radius;
+  this.width_0 = 600;
+  this.height_0 = 400;
+  this.pos = initPos;
+  this.vel = vel;
+  s = Math.sqrt(radius * radius - 225);
+  _upTo = new IntegerRange_0(-radius, radius);
+  for (y$iterator = new IntegerRange$RangeIterator_0(_upTo); y$iterator.this$0.step < 0?y$iterator.next >= y$iterator.this$0.end:y$iterator.next <= y$iterator.this$0.end;) {
+    y_0 = $next_1(y$iterator);
+    _upTo_1 = new IntegerRange_0(-radius, radius);
+    for (x$iterator = new IntegerRange$RangeIterator_0(_upTo_1); x$iterator.this$0.step < 0?x$iterator.next >= x$iterator.this$0.end:x$iterator.next <= x$iterator.this$0.end;) {
+      x_0 = $next_1(x$iterator);
+      if (x_0.value_0 * x_0.value_0 + y_0.value_0 * y_0.value_0 < s * s) {
+        z_0 = sqrt_0(radius * radius - x_0.value_0 * x_0.value_0 - y_0.value_0 * y_0.value_0);
+        a = round_int(x_0.value_0 * 15 / z_0 + 0.5);
+        b = round_int(y_0.value_0 * 15 / z_0 + 0.5);
+        dstIdx = (y_0.value_0 + radius) * 2 * radius + (x_0.value_0 + radius);
+        srcIdx = (b + radius) * 2 * radius + (a + radius);
+        _mappedTo = new Pair_0(valueOf(dstIdx), valueOf(srcIdx));
+        $add_4(this.lensArray, _mappedTo);
+      }
+    }
+  }
+}
+
+defineSeed(93, 1, {}, Lens_0);
+_.height_0 = 0;
+_.radius = 0;
+_.width_0 = 0;
+function $draw_1(this$static, context){
+  context.save();
+  $translate(context, this$static.pos.x_0, this$static.pos.y_0);
+  $rotate(context, this$static.rot);
+  $drawImage(context, this$static.image, 0, 0);
+  context.restore();
+}
+
+function Logo_0(image){
+  SpringObject_0.call(this, new Vector_0(0, 0));
+  this.image = image;
+  this.rot = 0;
+}
+
+defineSeed(94, 84, makeCastMap([Q$Logo, Q$SpringObject]), Logo_0);
+_.rot = 0;
+function $draw_2(this$static, context){
+  var _function;
+  if (!this$static.imageLoaded) {
+    return;
+  }
+  _function = new LogoGroup$2_0(context);
+  forEach(this$static.logos, _function);
+}
+
+--></script>
+<script><!--
+function $update_2(this$static, mouseX, mouseY){
+  var _cos, _lessThan, _magSquared, _multiply, _multiply_1, _plus, _plus_1, _sin, _sub, _upTo, d, goal, i, i$iterator, logo, logoPerTPi;
+  if (!this$static.imageLoaded) {
+    return;
+  }
+  this$static.k = this$static.k + 0.014137166941154067;
+  _upTo = new IntegerRange_0(this$static.numLogos, 1);
+  for (i$iterator = new IntegerRange$RangeIterator_0(_upTo); i$iterator.this$0.step < 0?i$iterator.next >= i$iterator.this$0.end:i$iterator.next <= i$iterator.this$0.end;) {
+    i = $next_1(i$iterator);
+    logo = dynamicCast($get_0(this$static.logos, i.value_0 - 1), Q$Logo);
+    logoPerTPi = 6.283185307179586 * (i.value_0 - 1) / this$static.numLogos;
+    _cos = cos_0(this$static.k + logoPerTPi);
+    _multiply = this$static.radius * _cos;
+    _plus = this$static.width_0 / 2 + _multiply;
+    _sin = sin_0(this$static.k + logoPerTPi);
+    _multiply_1 = this$static.radius * _sin;
+    _plus_1 = this$static.height_0 / 2 + _multiply_1;
+    goal = new Vector_0(_plus, _plus_1);
+    $set_0(logo.goal, goal);
+    logo.rot = this$static.k + logoPerTPi + 1.5707963267948966;
+    d = new Vector_0(mouseX, mouseY);
+    $sub_0(d, logo.pos);
+    _magSquared = d.x_0 * d.x_0 + d.y_0 * d.y_0;
+    _lessThan = _magSquared < 2500;
+    if (_lessThan) {
+      _sub = sub_0(logo.pos, d);
+      logo.goal = _sub;
+    }
+    $update(logo);
+  }
+}
+
+function LogoGroup_0(){
+  var _function, _get, _image, _newArrayList;
+  this.width_0 = 600;
+  this.height_0 = 400;
+  this.numLogos = 18;
+  this.radius = 165;
+  _newArrayList = newArrayList(initValues(_3Lcom_google_gwt_gwtcanvasdemo_client_Logo_2_classLit, makeCastMap([Q$Serializable]), Q$Logo, []));
+  this.logos = _newArrayList;
+  _image = new Image_2;
+  this.logoImg = _image;
+  _function = new LogoGroup$1_0(this);
+  $addHandler(this.logoImg, _function, ($clinit_LoadEvent() , $clinit_LoadEvent() , TYPE_0));
+  $setVisible(this.logoImg);
+  _get = ($clinit_RootPanel() , get_0(null));
+  $add_2(_get, this.logoImg);
+}
+
+defineSeed(95, 1, {}, LogoGroup_0);
+_.height_0 = 0;
+_.imageLoaded = false;
+_.k = 0;
+_.numLogos = 0;
+_.radius = 0;
+_.width_0 = 0;
+function $onLoad(this$static){
+  var _doubleArrow, _element, _function, _logo, _upTo, i$iterator, imageElement;
+  this$static.this$0.imageLoaded = true;
+  _element = $getElement(this$static.this$0.logoImg);
+  imageElement = _element;
+  _upTo = new IntegerRange_0(1, this$static.val$numLogos);
+  for (i$iterator = new IntegerRange$RangeIterator_0(_upTo); i$iterator.this$0.step < 0?i$iterator.next >= i$iterator.this$0.end:i$iterator.next <= i$iterator.this$0.end;) {
+    $next_1(i$iterator);
+    _logo = new Logo_0(imageElement);
+    _function = new LogoGroup$1$1_0(this$static.val$width, this$static.val$height);
+    _doubleArrow = (_logo.pos.x_0 = _function.val$width / 2 , _logo.pos.y_0 = _function.val$height / 2 , _logo);
+    $add_4(this$static.this$0.logos, _doubleArrow);
+  }
+}
+
+function LogoGroup$1_0(this$0){
+  this.this$0 = this$0;
+  this.val$numLogos = 18;
+  this.val$width = 600;
+  this.val$height = 400;
+}
+
+defineSeed(96, 1, makeCastMap([Q$LoadHandler, Q$EventHandler]), LogoGroup$1_0);
+_.val$height = 0;
+_.val$numLogos = 0;
+_.val$width = 0;
+function LogoGroup$1$1_0(val$width, val$height){
+  this.val$width = val$width;
+  this.val$height = val$height;
+}
+
+defineSeed(97, 1, {}, LogoGroup$1$1_0);
+_.val$height = 0;
+_.val$width = 0;
+function $apply(this$static, it){
+  $draw_1(it, this$static.val$context);
+}
+
+function LogoGroup$2_0(val$context){
+  this.val$context = val$context;
+}
+
+defineSeed(98, 1, {}, LogoGroup$2_0);
+function $add(this$static, x_0, y_0){
+  this$static.x_0 = this$static.x_0 + x_0;
+  this$static.y_0 = this$static.y_0 + y_0;
+}
+
+function $add_0(this$static, v){
+  $add(this$static, v.x_0, v.y_0);
+}
+
+function $mult(this$static){
+  this$static.x_0 = this$static.x_0 * 0.8;
+  this$static.y_0 = this$static.y_0 * 0.8;
+}
+
+function $set_0(this$static, v){
+  this$static.x_0 = v.x_0;
+  this$static.y_0 = v.y_0;
+}
+
+function $sub(this$static, x_0, y_0){
+  this$static.x_0 = this$static.x_0 - x_0;
+  this$static.y_0 = this$static.y_0 - y_0;
+}
+
+function $sub_0(this$static, v){
+  $sub(this$static, v.x_0, v.y_0);
+}
+
+function Vector_0(x_0, y_0){
+  this.x_0 = x_0;
+  this.y_0 = y_0;
+}
+
+function Vector_1(v){
+  Vector_0.call(this, v.x_0, v.y_0);
+}
+
+function sub_0(a, b){
+  return new Vector_0(a.x_0 - b.x_0, a.y_0 - b.y_0);
+}
+
+defineSeed(99, 1, {}, Vector_0, Vector_1);
+_.x_0 = 0;
+_.y_0 = 0;
+function getDirectionOnElement(elem){
+  var dirPropertyValue;
+  dirPropertyValue = $getPropertyString(elem, 'dir');
+  if ($equalsIgnoreCase('rtl', dirPropertyValue)) {
+    return $clinit_HasDirection$Direction() , RTL;
+  }
+   else if ($equalsIgnoreCase('ltr', dirPropertyValue)) {
+    return $clinit_HasDirection$Direction() , LTR;
+  }
+  return $clinit_HasDirection$Direction() , DEFAULT;
+}
+
+function setDirectionOnElement(elem, direction){
+  switch (direction.ordinal) {
+    case 0:
+      {
+        $setPropertyString(elem, 'dir', 'rtl');
+        break;
+      }
+
+    case 1:
+      {
+        $setPropertyString(elem, 'dir', 'ltr');
+        break;
+      }
+
+    case 2:
+      {
+        getDirectionOnElement(elem) != ($clinit_HasDirection$Direction() , DEFAULT) && $setPropertyString(elem, 'dir', '');
+        break;
+      }
+
+  }
+}
+
+function $clinit_HasDirection$Direction(){
+  $clinit_HasDirection$Direction = nullMethod;
+  RTL = new HasDirection$Direction_0('RTL', 0);
+  LTR = new HasDirection$Direction_0('LTR', 1);
+  DEFAULT = new HasDirection$Direction_0('DEFAULT', 2);
+  $VALUES_0 = initValues(_3Lcom_google_gwt_i18n_client_HasDirection$Direction_2_classLit, makeCastMap([Q$Serializable]), Q$HasDirection$Direction, [RTL, LTR, DEFAULT]);
+}
+
+function HasDirection$Direction_0(enum$name, enum$ordinal){
+  Enum_0.call(this, enum$name, enum$ordinal);
+}
+
+function values_0(){
+  $clinit_HasDirection$Direction();
+  return $VALUES_0;
+}
+
+defineSeed(101, 53, makeCastMap([Q$HasDirection$Direction, Q$Serializable, Q$Comparable, Q$Enum]), HasDirection$Direction_0);
+var $VALUES_0, DEFAULT, LTR, RTL;
+function Array_0(){
+}
+
+function createFromSeed(seedType, length_0){
+  var array = new Array(length_0);
+  if (seedType == 3) {
+    for (var i = 0; i < length_0; ++i) {
+      array[i] = {l:0, m:0, h:0};
+    }
+  }
+   else if (seedType > 0 && seedType < 3) {
+    var value_0 = seedType == 1?0:false;
+    for (var i = 0; i < length_0; ++i) {
+      array[i] = value_0;
+    }
+  }
+  return array;
+}
+
+function initDim(arrayClass, castableTypeMap, queryId, length_0, seedType){
+  var result;
+  result = createFromSeed(seedType, length_0);
+  initValues(arrayClass, castableTypeMap, queryId, result);
+  return result;
+}
+
+function initValues(arrayClass, castableTypeMap, queryId, array){
+  $clinit_Array$ExpandoWrapper();
+  wrapArray(array, expandoNames_0, expandoValues_0);
+  array.___clazz$ = arrayClass;
+  array.castableTypeMap$ = castableTypeMap;
+  array.queryId$ = queryId;
+  return array;
+}
+
+function setCheck(array, index_0, value_0){
+  if (value_0 != null) {
+    if (array.queryId$ > 0 && !canCastUnsafe(value_0, array.queryId$)) {
+      throw new ArrayStoreException_0;
+    }
+     else if (array.queryId$ == -1 && (value_0.typeMarker$ == nullMethod || canCast(value_0, 1))) {
+      throw new ArrayStoreException_0;
+    }
+     else if (array.queryId$ < -1 && !(value_0.typeMarker$ != nullMethod && !canCast(value_0, 1)) && !canCastUnsafe(value_0, -array.queryId$)) {
+      throw new ArrayStoreException_0;
+    }
+  }
+  return array[index_0] = value_0;
+}
+
+defineSeed(102, 1, {}, Array_0);
+_.queryId$ = 0;
+function $clinit_Array$ExpandoWrapper(){
+  $clinit_Array$ExpandoWrapper = nullMethod;
+  expandoNames_0 = [];
+  expandoValues_0 = [];
+  initExpandos(new Array_0, expandoNames_0, expandoValues_0);
+}
+
+function initExpandos(protoType, expandoNames, expandoValues){
+  var i = 0, value_0;
+  for (var name_0 in protoType) {
+    if (value_0 = protoType[name_0]) {
+      expandoNames[i] = name_0;
+      expandoValues[i] = value_0;
+      ++i;
+    }
+  }
+}
+
+function wrapArray(array, expandoNames, expandoValues){
+  $clinit_Array$ExpandoWrapper();
+  for (var i = 0, c = expandoNames.length; i < c; ++i) {
+    array[expandoNames[i]] = expandoValues[i];
+  }
+}
+
+var expandoNames_0, expandoValues_0;
+function canCast(src_0, dstId){
+  return src_0.castableTypeMap$ && !!src_0.castableTypeMap$[dstId];
+}
+
+function canCastUnsafe(src_0, dstId){
+  return src_0.castableTypeMap$ && src_0.castableTypeMap$[dstId];
+}
+
+function dynamicCast(src_0, dstId){
+  if (src_0 != null && !canCastUnsafe(src_0, dstId)) {
+    throw new ClassCastException_0;
+  }
+  return src_0;
+}
+
+function dynamicCastJso(src_0){
+  if (src_0 != null && (src_0.typeMarker$ == nullMethod || canCast(src_0, 1))) {
+    throw new ClassCastException_0;
+  }
+  return src_0;
+}
+
+function instanceOf(src_0, dstId){
+  return src_0 != null && canCast(src_0, dstId);
+}
+
+function instanceOfJso(src_0){
+  return src_0 != null && src_0.typeMarker$ != nullMethod && !canCast(src_0, 1);
+}
+
+function isJavaObject(src_0){
+  return src_0.typeMarker$ == nullMethod || canCast(src_0, 1);
+}
+
+function maskUndefined(src_0){
+  return src_0 == null?null:src_0;
+}
+
+function round_int(x_0){
+  return ~~Math.max(Math.min(x_0, 2147483647), -2147483648);
+}
+
+function throwClassCastExceptionUnlessNull(o){
+  if (o != null) {
+    throw new ClassCastException_0;
+  }
+  return null;
+}
+
+function init(){
+  var runtimeValue;
+  isStatsAvailable() && onModuleStart('com.google.gwt.useragent.client.UserAgentAsserter');
+  runtimeValue = $getRuntimeValue();
+  $equals('ie9', runtimeValue) || ($wnd.alert('ERROR: Possible problem with your *.gwt.xml module file.\nThe compile time user.agent value (ie9) does not match the runtime user.agent value (' + runtimeValue + '). Expect more errors.\n') , undefined);
+  isStatsAvailable() && onModuleStart('com.google.gwt.user.client.DocumentModeAsserter');
+  $onModuleLoad_0();
+  isStatsAvailable() && onModuleStart('com.google.gwt.gwtcanvasdemo.client.GwtCanvasDemo');
+  $onModuleLoad(new GwtCanvasDemo_0);
+}
+
+function getCachableJavaScriptException(e_0){
+  var jse = e_0.__gwt$exception;
+  if (!jse) {
+    jse = new JavaScriptException_0(e_0);
+    try {
+      e_0.__gwt$exception = jse;
+    }
+     catch (e) {
+    }
+  }
+  return jse;
+}
+
+function unwrap(e){
+  var jse;
+  if (instanceOf(e, Q$JavaScriptException)) {
+    jse = dynamicCast(e, Q$JavaScriptException);
+    if (jse.e !== ($clinit_JavaScriptException() , NOT_SET)) {
+      return jse.e === NOT_SET?null:jse.e;
+    }
+  }
+  return e;
+}
+
+function wrap(e){
+  if (instanceOf(e, Q$Throwable)) {
+    return e;
+  }
+  return e == null?new JavaScriptException_0(null):getCachableJavaScriptException(e);
+}
+
+function create(value_0){
+  var a0, a1, a2;
+  a0 = value_0 & 4194303;
+  a1 = value_0 >> 22 & 4194303;
+  a2 = value_0 < 0?1048575:0;
+  return {l:a0, m:a1, h:a2};
+}
+
+function add_0(a, b){
+  var sum0, sum1, sum2;
+  sum0 = a.l + b.l;
+  sum1 = a.m + b.m + (sum0 >> 22);
+  sum2 = a.h + b.h + (sum1 >> 22);
+  return {l:sum0 & 4194303, m:sum1 & 4194303, h:sum2 & 1048575};
+}
+
+function fromInt(value_0){
+  var rebase, result;
+  if (value_0 > -129 && value_0 < 128) {
+    rebase = value_0 + 128;
+    boxedValues == null && (boxedValues = initDim(_3Lcom_google_gwt_lang_LongLibBase$LongEmul_2_classLit, makeCastMap([Q$Serializable]), Q$LongLibBase$LongEmul, 256, 0));
+    result = boxedValues[rebase];
+    !result && (result = boxedValues[rebase] = create(value_0));
+    return result;
+  }
+  return create(value_0);
+}
+
+function gt(a, b){
+  var signa, signb;
+  signa = a.h >> 19;
+  signb = b.h >> 19;
+  return signa == 0?signb != 0 || a.h > b.h || a.h == b.h && a.m > b.m || a.h == b.h && a.m == b.m && a.l > b.l:!(signb == 0 || a.h < b.h || a.h == b.h && a.m < b.m || a.h == b.h && a.m == b.m && a.l <= b.l);
+}
+
+function lt(a, b){
+  var signa, signb;
+  return !(signa = a.h >> 19 , signb = b.h >> 19 , signa == 0?signb != 0 || a.h > b.h || a.h == b.h && a.m > b.m || a.h == b.h && a.m == b.m && a.l >= b.l:!(signb == 0 || a.h < b.h || a.h == b.h && a.m < b.m || a.h == b.h && a.m == b.m && a.l < b.l));
+}
+
+var boxedValues;
+function isStatsAvailable(){
+  return !!$stats;
+}
+
+function onModuleStart(mainClassName){
+  return $stats({moduleName:$moduleName, sessionId:$sessionId, subSystem:'startup', evtGroup:'moduleStartup', millis:(new Date).getTime(), type:'onModuleLoadStart', className:mainClassName});
+}
+
+function SafeUriString_0(){
+  this.uri_0 = 'xtendlogo40_40.png';
+}
+
+defineSeed(114, 1, makeCastMap([Q$SafeUri, Q$SafeUriString]), SafeUriString_0);
+_.equals$ = function equals_1(obj){
+  if (!instanceOf(obj, Q$SafeUri)) {
+    return false;
+  }
+  return $equals(this.uri_0, dynamicCast(dynamicCast(obj, Q$SafeUri), Q$SafeUriString).uri_0);
+}
+;
+_.hashCode$ = function hashCode_3(){
+  return getHashCode_0(this.uri_0);
+}
+;
+function $clinit_UriUtils(){
+  $clinit_UriUtils = nullMethod;
+  new RegExp('%5B', 'g');
+  new RegExp('%5D', 'g');
+}
+
+function $clinit_DOM(){
+  $clinit_DOM = nullMethod;
+  impl = new DOMImplIE9_0;
+}
+
+function dispatchEvent_0(evt, elem, listener){
+  $clinit_DOM();
+  var prevCurrentEvent;
+  prevCurrentEvent = currentEvent;
+  currentEvent = evt;
+  elem == sCaptureElem && $eventGetTypeInt(evt.type) == 8192 && (sCaptureElem = null);
+  listener.onBrowserEvent(evt);
+  currentEvent = prevCurrentEvent;
+}
+
+function sinkBitlessEvent(elem, eventTypeName){
+  $clinit_DOM();
+  $sinkBitlessEvent_0(impl, elem, eventTypeName);
+}
+
+function sinkEvents(elem, eventBits){
+  $clinit_DOM();
+  $sinkEvents(impl, elem, eventBits);
+}
+
+var currentEvent = null, impl, sCaptureElem;
+function $onModuleLoad_0(){
+  var allowedModes, currentMode, i;
+  currentMode = $doc.compatMode;
+  allowedModes = initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable]), Q$String, ['CSS1Compat']);
+  for (i = 0; i < allowedModes.length; i++) {
+    if ($equals(allowedModes[i], currentMode)) {
+      return;
+    }
+  }
+  allowedModes.length == 1 && $equals('CSS1Compat', allowedModes[0]) && $equals('BackCompat', currentMode)?"GWT no longer supports Quirks Mode (document.compatMode=' BackCompat').<br>Make sure your application's host HTML page has a Standards Mode (document.compatMode=' CSS1Compat') doctype,<br>e.g. by using &lt;!doctype html&gt; at the start of your application's HTML page.<br><br>To continue using this unsupported rendering mode and risk layout problems, suppress this message by adding<br>the following line to your*.gwt.xml module file:<br>&nbsp;&nbsp;&lt;extend-configuration-property name=\"document.compatMode\" value=\"" + currentMode + '"/&gt;':"Your *.gwt.xml module configuration prohibits the use of the current doucment rendering mode (document.compatMode=' " + currentMode + "').<br>Modify your application's host HTML page doctype, or update your custom 'document.compatMode' configuration property settings.";
+}
+
+function getTypeInt(typeName){
+  return $eventGetTypeInt(($clinit_DOM() , typeName));
+}
+
+function addCloseHandler(handler){
+  maybeInitializeCloseHandlers();
+  return addHandler(TYPE_5?TYPE_5:(TYPE_5 = new GwtEvent$Type_0), handler);
+}
+
+function addHandler(type_0, handler){
+  return $addHandler_0((!handlers_0 && (handlers_0 = new Window$WindowHandlers_0) , handlers_0), type_0, handler);
+}
+
+function maybeInitializeCloseHandlers(){
+  var scriptElem, elem;
+  if (!closeHandlersInitialized) {
+    scriptElem = (elem = $doc.createElement('script') , $setInnerText(elem, 'function __gwt_initWindowCloseHandler(beforeunload, unload) {\n  var wnd = window\n  , oldOnBeforeUnload = wnd.onbeforeunload\n  , oldOnUnload = wnd.onunload;\n  \n  wnd.onbeforeunload = function(evt) {\n    var ret, oldRet;\n    try {\n      ret = beforeunload();\n    } finally {\n      oldRet = oldOnBeforeUnload && oldOnBeforeUnload(evt);\n    }\n    // Avoid returning null as IE6 will coerce it into a string.\n    // Ensure that "" gets returned properly.\n    if (ret != null) {\n      return ret;\n    }\n    if (oldRet != null) {\n      return oldRet;\n    }\n    // returns undefined.\n  };\n  \n  wnd.onunload = function(evt) {\n    try {\n      unload();\n    } finally {\n      oldOnUnload && oldOnUnload(evt);\n      wnd.onresize = null;\n      wnd.onscroll = null;\n      wnd.onbeforeunload = null;\n      wnd.onunload = null;\n    }\n  };\n  \n  // Remove the reference once we\'ve initialize the handler\n  wnd.__gwt_initWindowCloseHandler = undefined;\n}\n') , elem);
+    $appendChild($doc.body, scriptElem);
+    $wnd.__gwt_initWindowCloseHandler($entry(onClosing), $entry(onClosed));
+    $removeChild($doc.body, scriptElem);
+    closeHandlersInitialized = true;
+  }
+}
+
+function onClosed(){
+  closeHandlersInitialized && fire((!handlers_0 && (handlers_0 = new Window$WindowHandlers_0) , handlers_0));
+}
+
+function onClosing(){
+  var event_0;
+  if (closeHandlersInitialized) {
+    event_0 = new Window$ClosingEvent_0;
+    !!handlers_0 && $fireEvent_0(handlers_0, event_0);
+    return null;
+  }
+  return null;
+}
+
+var closeHandlersInitialized = false, handlers_0;
+function $clinit_Window$ClosingEvent(){
+  $clinit_Window$ClosingEvent = nullMethod;
+  TYPE_6 = new GwtEvent$Type_0;
+}
+
+function Window$ClosingEvent_0(){
+  $clinit_Window$ClosingEvent();
+}
+
+defineSeed(121, 59, {}, Window$ClosingEvent_0);
+_.dispatch = function dispatch_6(handler){
+  throwClassCastExceptionUnlessNull(handler);
+  null.nullMethod();
+}
+;
+_.getAssociatedType = function getAssociatedType_7(){
+  return TYPE_6;
+}
+;
+var TYPE_6;
+function Window$WindowHandlers_0(){
+  HandlerManager_0.call(this, null);
+}
+
+defineSeed(122, 76, makeCastMap([Q$HasHandlers]), Window$WindowHandlers_0);
+function $eventGetTypeInt(eventType){
+  switch (eventType) {
+    case 'blur':
+      return 4096;
+    case 'change':
+      return 1024;
+    case 'click':
+      return 1;
+    case 'dblclick':
+      return 2;
+    case 'focus':
+      return 2048;
+    case 'keydown':
+      return 128;
+    case 'keypress':
+      return 256;
+    case 'keyup':
+      return 512;
+    case 'load':
+      return 32768;
+    case 'losecapture':
+      return 8192;
+    case 'mousedown':
+      return 4;
+    case 'mousemove':
+      return 64;
+    case 'mouseout':
+      return 32;
+    case 'mouseover':
+      return 16;
+    case 'mouseup':
+      return 8;
+    case 'scroll':
+      return 16384;
+    case 'error':
+      return 65536;
+    case 'DOMMouseScroll':
+    case 'mousewheel':
+      return 131072;
+    case 'contextmenu':
+      return 262144;
+    case 'paste':
+      return 524288;
+    case 'touchstart':
+      return 1048576;
+    case 'touchmove':
+      return 2097152;
+    case 'touchend':
+      return 4194304;
+    case 'touchcancel':
+      return 8388608;
+    case 'gesturestart':
+      return 16777216;
+    case 'gesturechange':
+      return 33554432;
+    case 'gestureend':
+      return 67108864;
+    default:return -1;
+  }
+}
+
+function $maybeInitializeEventSystem(this$static){
+  if (!eventSystemIsInitialized) {
+    $initEventSystem();
+    new DOMImpl$1_0(this$static);
+    eventSystemIsInitialized = true;
+  }
+}
+
+function cleanupDOM(dom){
+  var allElements, elem, i, listener;
+  allElements = $doc.getElementsByTagName('*');
+  for (i = 0; i < allElements.length; i++) {
+    elem = allElements[i];
+    listener = getEventListener(elem);
+    if (listener) {
+      $maybeInitializeEventSystem(dom);
+      $sinkEventsImpl(elem, 0);
+      setEventListener(elem, null);
+    }
+    maybeRemoveDisposableEvent(elem);
+  }
+}
+
+function getEventListener(elem){
+  var maybeListener = elem.__listener;
+  return !instanceOfJso(maybeListener) && instanceOf(maybeListener, Q$EventListener)?maybeListener:null;
+}
+
+function maybeRemoveDisposableEvent(elem){
+  var diEvents = elem.__gwt_disposeEvent;
+  if (diEvents) {
+    for (var i = 0, l_0 = diEvents.length; i < l_0; i++) {
+      var diEvent = diEvents[i];
+      elem.removeEventListener(diEvent.event, diEvent.handler, diEvent.capture);
+      elem.__gwt_disposeEvent = null;
+    }
+  }
+}
+
+function setEventListener(elem, listener){
+  elem.__listener = listener;
+}
+
+defineSeed(123, 1, {});
+var eventSystemIsInitialized = false;
+function DOMImpl$1_0(this$0){
+  this.this$0 = this$0;
+}
+
+defineSeed(124, 1, {}, DOMImpl$1_0);
+function $clinit_DOMImplStandard(){
+  $clinit_DOMImplStandard = nullMethod;
+  bitlessEventDispatchers = {_default_:dispatchEvent_2, dragenter:dispatchDragEvent, dragover:dispatchDragEvent};
+  captureEventDispatchers = {click:dispatchCapturedMouseEvent, dblclick:dispatchCapturedMouseEvent, mousedown:dispatchCapturedMouseEvent, mouseup:dispatchCapturedMouseEvent, mousemove:dispatchCapturedMouseEvent, mouseover:dispatchCapturedMouseEvent, mouseout:dispatchCapturedMouseEvent, mousewheel:dispatchCapturedMouseEvent, keydown:dispatchCapturedEvent, keyup:dispatchCapturedEvent, keypress:dispatchCapturedEvent, touchstart:dispatchCapturedMouseEvent, touchend:dispatchCapturedMouseEvent, touchmove:dispatchCapturedMouseEvent, touchcancel:dispatchCapturedMouseEvent, gesturestart:dispatchCapturedMouseEvent, gestureend:dispatchCapturedMouseEvent, gesturechange:dispatchCapturedMouseEvent};
+}
+
+function $disposeEventSystem(){
+  var foreach = foreach_0;
+  foreach(captureEvents, function(e, fn){
+    $wnd.removeEventListener(e, fn, true);
+  }
+  );
+}
+
+function $initEventSystem(){
+  dispatchEvent_1 = $entry(dispatchEvent_2);
+  dispatchUnhandledEvent = $entry(dispatchUnhandledEvent_0);
+  var foreach = foreach_0;
+  var bitlessEvents = bitlessEventDispatchers;
+  foreach(bitlessEvents, function(e, fn){
+    bitlessEvents[e] = $entry(fn);
+  }
+  );
+  var captureEvents_0 = captureEventDispatchers;
+  foreach(captureEvents_0, function(e, fn){
+    captureEvents_0[e] = $entry(fn);
+  }
+  );
+  foreach(captureEvents_0, function(e, fn){
+    $wnd.addEventListener(e, fn, true);
+  }
+  );
+}
+
+function $sinkBitlessEvent_0(this$static, elem, eventTypeName){
+  $maybeInitializeEventSystem(this$static);
+  $sinkBitlessEventImpl(elem, eventTypeName);
+  $equals('dragover', eventTypeName) && $sinkBitlessEventImpl(elem, 'dragenter');
+}
+
+function $sinkBitlessEventImpl(elem, eventTypeName){
+  var dispatchMap = bitlessEventDispatchers;
+  var dispatcher = dispatchMap[eventTypeName] || dispatchMap['_default_'];
+  elem.addEventListener(eventTypeName, dispatcher, false);
+}
+
+function $sinkEvents(this$static, elem, bits){
+  $maybeInitializeEventSystem(this$static);
+  $sinkEventsImpl(elem, bits);
+}
+
+function $sinkEventsImpl(elem, bits){
+  var chMask = (elem.__eventBits || 0) ^ bits;
+  elem.__eventBits = bits;
+  if (!chMask)
+    return;
+  chMask & 1 && (elem.onclick = bits & 1?dispatchEvent_1:null);
+  chMask & 2 && (elem.ondblclick = bits & 2?dispatchEvent_1:null);
+  chMask & 4 && (elem.onmousedown = bits & 4?dispatchEvent_1:null);
+  chMask & 8 && (elem.onmouseup = bits & 8?dispatchEvent_1:null);
+  chMask & 16 && (elem.onmouseover = bits & 16?dispatchEvent_1:null);
+  chMask & 32 && (elem.onmouseout = bits & 32?dispatchEvent_1:null);
+  chMask & 64 && (elem.onmousemove = bits & 64?dispatchEvent_1:null);
+  chMask & 128 && (elem.onkeydown = bits & 128?dispatchEvent_1:null);
+  chMask & 256 && (elem.onkeypress = bits & 256?dispatchEvent_1:null);
+  chMask & 512 && (elem.onkeyup = bits & 512?dispatchEvent_1:null);
+  chMask & 1024 && (elem.onchange = bits & 1024?dispatchEvent_1:null);
+  chMask & 2048 && (elem.onfocus = bits & 2048?dispatchEvent_1:null);
+  chMask & 4096 && (elem.onblur = bits & 4096?dispatchEvent_1:null);
+  chMask & 8192 && (elem.onlosecapture = bits & 8192?dispatchEvent_1:null);
+  chMask & 16384 && (elem.onscroll = bits & 16384?dispatchEvent_1:null);
+  chMask & 32768 && (elem.onload = bits & 32768?dispatchUnhandledEvent:null);
+  chMask & 65536 && (elem.onerror = bits & 65536?dispatchEvent_1:null);
+  chMask & 131072 && (elem.onmousewheel = bits & 131072?dispatchEvent_1:null);
+  chMask & 262144 && (elem.oncontextmenu = bits & 262144?dispatchEvent_1:null);
+  chMask & 524288 && (elem.onpaste = bits & 524288?dispatchEvent_1:null);
+  chMask & 1048576 && (elem.ontouchstart = bits & 1048576?dispatchEvent_1:null);
+  chMask & 2097152 && (elem.ontouchmove = bits & 2097152?dispatchEvent_1:null);
+  chMask & 4194304 && (elem.ontouchend = bits & 4194304?dispatchEvent_1:null);
+  chMask & 8388608 && (elem.ontouchcancel = bits & 8388608?dispatchEvent_1:null);
+  chMask & 16777216 && (elem.ongesturestart = bits & 16777216?dispatchEvent_1:null);
+  chMask & 33554432 && (elem.ongesturechange = bits & 33554432?dispatchEvent_1:null);
+  chMask & 67108864 && (elem.ongestureend = bits & 67108864?dispatchEvent_1:null);
+}
+
+function dispatchCapturedEvent(evt){
+  $clinit_DOM();
+}
+
+function dispatchCapturedMouseEvent(evt){
+  $clinit_DOM();
+  return;
+}
+
+function dispatchDragEvent(evt){
+  $eventPreventDefault(evt);
+  dispatchEvent_2(evt);
+}
+
+function dispatchEvent_2(evt){
+  var element;
+  element = getFirstAncestorWithListener(evt);
+  if (!element) {
+    return;
+  }
+  dispatchEvent_0(evt, element.nodeType != 1?null:element, getEventListener(element));
+}
+
+function dispatchUnhandledEvent_0(evt){
+  var element;
+  element = $eventGetCurrentTarget(evt);
+  $setPropertyString(element, '__gwtLastUnhandledEvent', evt.type);
+  dispatchEvent_2(evt);
+}
+
+function getFirstAncestorWithListener(evt){
+  var curElem;
+  curElem = $eventGetCurrentTarget(evt);
+  while (!!curElem && !getEventListener(curElem)) {
+    curElem = curElem.parentNode;
+  }
+  return curElem;
+}
+
+defineSeed(127, 123, {});
+var bitlessEventDispatchers, captureEventDispatchers, dispatchEvent_1, dispatchUnhandledEvent;
+defineSeed(126, 127, {});
+function DOMImplIE9_0(){
+  $clinit_DOMImplStandard();
+}
+
+defineSeed(125, 126, {}, DOMImplIE9_0);
+function foreach_0(map_0, fn){
+  for (var e in map_0) {
+    map_0.hasOwnProperty(e) && fn(e, map_0[e]);
+  }
+}
+
+defineSeed(133, 9, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+_.doAttachChildren = function doAttachChildren_0(){
+  tryCommand(this, ($clinit_AttachDetachException() , attachCommand));
+}
+;
+_.doDetachChildren = function doDetachChildren_0(){
+  tryCommand(this, ($clinit_AttachDetachException() , detachCommand));
+}
+;
+function $add_1(this$static, child, container){
+  $removeFromParent(child);
+  $add_3(this$static.children, child);
+  $clinit_DOM();
+  $appendChild(container, ($clinit_PotentialElement() , $resolve(child.element)));
+  $setParent(child, this$static);
+}
+
+function $remove(this$static, w){
+  var elem, parent_0;
+  if (w.parent_0 != this$static) {
+    return false;
+  }
+  try {
+    $setParent(w, null);
+  }
+   finally {
+    elem = ($clinit_DOM() , w.element);
+    $removeChild((parent_0 = elem.parentNode , (!parent_0 || parent_0.nodeType != 1) && (parent_0 = null) , parent_0), elem);
+    $remove_2(this$static.children, w);
+  }
+  return true;
+}
+
+defineSeed(132, 133, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+_.iterator = function iterator_0(){
+  return new WidgetCollection$WidgetIterator_0(this.children);
+}
+;
+function $add_2(this$static, w){
+  $add_1(this$static, w, ($clinit_DOM() , this$static.element));
+}
+
+function $remove_0(this$static, w){
+  var removed;
+  removed = $remove(this$static, w);
+  removed && changeToStaticPositioning(($clinit_DOM() , w.element));
+  return removed;
+}
+
+function changeToStaticPositioning(elem){
+  $setPropertyImpl(elem.style, 'left', '');
+  $setPropertyImpl(elem.style, 'top', '');
+  $setPropertyImpl(elem.style, 'position', '');
+}
+
+defineSeed(131, 132, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+function $clinit_AttachDetachException(){
+  $clinit_AttachDetachException = nullMethod;
+  attachCommand = new AttachDetachException$1_0;
+  detachCommand = new AttachDetachException$2_0;
+}
+
+function AttachDetachException_0(causes){
+  UmbrellaException_2.call(this, causes);
+}
+
+function tryCommand(hasWidgets, c){
+  $clinit_AttachDetachException();
+  var caught, e, w, w$iterator;
+  caught = null;
+  for (w$iterator = hasWidgets.iterator(); w$iterator.hasNext();) {
+    w = dynamicCast(w$iterator.next_0(), Q$Widget);
+    try {
+      c.execute_0(w);
+    }
+     catch ($e0) {
+      $e0 = wrap($e0);
+      if (instanceOf($e0, Q$Throwable)) {
+        e = $e0;
+        !caught && (caught = new HashSet_0);
+        $add_5(caught, e);
+      }
+       else 
+        throw unwrap($e0);
+    }
+  }
+  if (caught) {
+    throw new AttachDetachException_0(caught);
+  }
+}
+
+defineSeed(134, 81, makeCastMap([Q$UmbrellaException, Q$Serializable, Q$Throwable]), AttachDetachException_0);
+var attachCommand, detachCommand;
+function AttachDetachException$1_0(){
+}
+
+defineSeed(135, 1, {}, AttachDetachException$1_0);
+_.execute_0 = function execute_2(w){
+  w.onAttach();
+}
+;
+function AttachDetachException$2_0(){
+}
+
+defineSeed(136, 1, {}, AttachDetachException$2_0);
+_.execute_0 = function execute_3(w){
+  $onDetach(w);
+}
+;
+function $setTextOrHtml(this$static){
+  $setInnerText(this$static.element, 'Your browser does not support the HTML5 Canvas. Please upgrade your browser to view this demo.');
+  if (this$static.textDir != this$static.initialElementDir) {
+    this$static.textDir = this$static.initialElementDir;
+    setDirectionOnElement(this$static.element, this$static.initialElementDir);
+  }
+}
+
+function DirectionalTextHelper_0(element){
+  this.element = element;
+  this.initialElementDir = getDirectionOnElement(element);
+  this.textDir = this.initialElementDir;
+}
+
+defineSeed(137, 1, {}, DirectionalTextHelper_0);
+function $clinit_HasHorizontalAlignment(){
+  $clinit_HasHorizontalAlignment = nullMethod;
+  $clinit_Style$TextAlign();
+}
+
+function $clinit_Image(){
+  $clinit_Image = nullMethod;
+  new HashMap_0;
+}
+
+function $changeState(this$static, newState){
+  this$static.state = newState;
+}
+
+function Image_1(url_0){
+  $changeState(this, new Image$UnclippedState_0(this, url_0));
+  $setClassName(($clinit_DOM() , this.element), 'gwt-Image');
+}
+
+function Image_2(){
+  $clinit_Image();
+  Image_1.call(this, ($clinit_UriUtils() , new SafeUriString_0));
+}
+
+--></script>
+<script><!--
+defineSeed(138, 9, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), Image_2);
+_.onBrowserEvent = function onBrowserEvent_0(event_0){
+  ($clinit_DOM() , $eventGetTypeInt(event_0.type)) == 32768 && !!this.state && $setPropertyString(this.element, '__gwtLastUnhandledEvent', '');
+  $onBrowserEvent(this, event_0);
+}
+;
+_.onLoad = function onLoad_0(){
+  $onLoad_0(this.state, this);
+}
+;
+function $onLoad_0(this$static, image){
+  var unhandledEvent;
+  unhandledEvent = $getPropertyString(($clinit_DOM() , image.element), '__gwtLastUnhandledEvent');
+  $equals('load', unhandledEvent) && (this$static.syntheticEventCommand = new Image$State$1_0(this$static, image) , $scheduleDeferred(($clinit_SchedulerImpl() , INSTANCE), this$static.syntheticEventCommand));
+}
+
+defineSeed(139, 1, {});
+_.syntheticEventCommand = null;
+function $execute(this$static){
+  var evt, evt_0;
+  if (this$static.val$image.state != this$static.this$1 || this$static != this$static.this$1.syntheticEventCommand) {
+    return;
+  }
+  this$static.this$1.syntheticEventCommand = null;
+  if (!this$static.val$image.attached) {
+    $setPropertyString($getImageElement(this$static.val$image), '__gwtLastUnhandledEvent', 'load');
+    return;
+  }
+  evt = (evt_0 = $doc.createEvent('HTMLEvents') , evt_0.initEvent('load', false, false) , evt_0);
+  $dispatchEvent($getImageElement(this$static.val$image), evt);
+}
+
+function Image$State$1_0(this$1, val$image){
+  this.this$1 = this$1;
+  this.val$image = val$image;
+}
+
+defineSeed(140, 1, {}, Image$State$1_0);
+function $getImageElement(image){
+  return $clinit_DOM() , image.element;
+}
+
+function Image$UnclippedState_0(image, url_0){
+  $replaceElement(image, $doc.createElement('img'));
+  sinkEvents(($clinit_DOM() , image.element), 32768);
+  image.eventsToSink == -1?sinkEvents(image.element, 133398655 | (image.element.__eventBits || 0)):(image.eventsToSink |= 133398655);
+  !!image.state && $setPropertyString(image.element, '__gwtLastUnhandledEvent', '');
+  $imgSetSrc(image.element, url_0.uri_0);
+}
+
+defineSeed(141, 139, {}, Image$UnclippedState_0);
+function LabelBase_0(element){
+  $setElement(this, ($clinit_DOM() , element));
+  this.directionalTextHelper = new DirectionalTextHelper_0(this.element);
+}
+
+defineSeed(143, 9, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+function Label_0(){
+  LabelBase_0.call(this, $doc.createElement('div'));
+  $setClassName(($clinit_DOM() , this.element), 'gwt-Label');
+  $setTextOrHtml(this.directionalTextHelper);
+}
+
+defineSeed(142, 143, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), Label_0);
+function $clinit_PotentialElement(){
+  $clinit_PotentialElement = nullMethod;
+  declareShim();
+}
+
+function $resolve(this$static){
+  return this$static.__gwt_resolve?this$static.__gwt_resolve():this$static;
+}
+
+function declareShim(){
+  var shim = function(){
+  }
+  ;
+  shim.prototype = {className:'', clientHeight:0, clientWidth:0, dir:'', getAttribute:function(name_0, value_0){
+    return this[name_0];
+  }
+  , href:'', id:'', lang:'', nodeType:1, removeAttribute:function(name_0, value_0){
+    this[name_0] = undefined;
+  }
+  , setAttribute:function(name_0, value_0){
+    this[name_0] = value_0;
+  }
+  , src:'', style:{}, title:''};
+  $wnd.GwtPotentialElementShim = shim;
+}
+
+function $clinit_RootPanel(){
+  $clinit_RootPanel = nullMethod;
+  maybeDetachCommand = new RootPanel$1_0;
+  rootPanels = new HashMap_0;
+  widgetsToDetach = new HashSet_0;
+}
+
+function RootPanel_0(elem){
+  this.children = new WidgetCollection_0;
+  $setElement(this, ($clinit_DOM() , elem));
+  $onAttach(this);
+}
+
+function detachNow(widget){
+  $clinit_RootPanel();
+  try {
+    $onDetach(widget);
+  }
+   finally {
+    $remove_4(widgetsToDetach, widget);
+  }
+}
+
+function detachWidgets(){
+  $clinit_RootPanel();
+  try {
+    tryCommand(widgetsToDetach, maybeDetachCommand);
+  }
+   finally {
+    $clearImpl(widgetsToDetach.map_0);
+    $clearImpl(rootPanels);
+  }
+}
+
+function get_0(id_0){
+  $clinit_RootPanel();
+  var elem, rp;
+  rp = dynamicCast($get(rootPanels, id_0), Q$RootPanel);
+  elem = null;
+  if (id_0 != null) {
+    if (!(elem = $getElementById($doc, id_0))) {
+      return null;
+    }
+  }
+  if (rp) {
+    if (!elem || ($clinit_DOM() , rp.element) == elem) {
+      return rp;
+    }
+  }
+  rootPanels.size_0 == 0 && addCloseHandler(new RootPanel$3_0);
+  !elem?(rp = new RootPanel$DefaultRootPanel_0):(rp = new RootPanel_0(elem));
+  $put(rootPanels, id_0, rp);
+  $add_5(widgetsToDetach, rp);
+  return rp;
+}
+
+defineSeed(145, 131, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$RootPanel, Q$UIObject, Q$Widget]), RootPanel_0);
+var maybeDetachCommand, rootPanels, widgetsToDetach;
+function RootPanel$1_0(){
+}
+
+defineSeed(146, 1, {}, RootPanel$1_0);
+_.execute_0 = function execute_4(w){
+  w.attached && $onDetach(w);
+}
+;
+function RootPanel$3_0(){
+}
+
+defineSeed(147, 1, makeCastMap([Q$CloseHandler, Q$EventHandler]), RootPanel$3_0);
+function RootPanel$DefaultRootPanel_0(){
+  RootPanel_0.call(this, $doc.body);
+}
+
+defineSeed(148, 145, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$RootPanel, Q$UIObject, Q$Widget]), RootPanel$DefaultRootPanel_0);
+function $add_3(this$static, w){
+  $insert(this$static, w, this$static.size_0);
+}
+
+function $indexOf(this$static, w){
+  var i;
+  for (i = 0; i < this$static.size_0; ++i) {
+    if (this$static.array[i] == w) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+function $insert(this$static, w, beforeIndex){
+  var i, i0, newArray;
+  if (beforeIndex < 0 || beforeIndex > this$static.size_0) {
+    throw new IndexOutOfBoundsException_0;
+  }
+  if (this$static.size_0 == this$static.array.length) {
+    newArray = initDim(_3Lcom_google_gwt_user_client_ui_Widget_2_classLit, makeCastMap([Q$Serializable]), Q$Widget, this$static.array.length * 2, 0);
+    for (i = 0; i < this$static.array.length; ++i) {
+      setCheck(newArray, i, this$static.array[i]);
+    }
+    this$static.array = newArray;
+  }
+  ++this$static.size_0;
+  for (i0 = this$static.size_0 - 1; i0 > beforeIndex; --i0) {
+    setCheck(this$static.array, i0, this$static.array[i0 - 1]);
+  }
+  setCheck(this$static.array, beforeIndex, w);
+}
+
+function $remove_1(this$static, index_0){
+  var i;
+  if (index_0 < 0 || index_0 >= this$static.size_0) {
+    throw new IndexOutOfBoundsException_0;
+  }
+  --this$static.size_0;
+  for (i = index_0; i < this$static.size_0; ++i) {
+    setCheck(this$static.array, i, this$static.array[i + 1]);
+  }
+  setCheck(this$static.array, this$static.size_0, null);
+}
+
+function $remove_2(this$static, w){
+  var index_0;
+  index_0 = $indexOf(this$static, w);
+  if (index_0 == -1) {
+    throw new NoSuchElementException_0;
+  }
+  $remove_1(this$static, index_0);
+}
+
+function WidgetCollection_0(){
+  this.array = initDim(_3Lcom_google_gwt_user_client_ui_Widget_2_classLit, makeCastMap([Q$Serializable]), Q$Widget, 4, 0);
+}
+
+defineSeed(149, 1, {}, WidgetCollection_0);
+_.iterator = function iterator_1(){
+  return new WidgetCollection$WidgetIterator_0(this);
+}
+;
+_.size_0 = 0;
+function $next(this$static){
+  if (this$static.index_0 >= this$static.this$0.size_0) {
+    throw new NoSuchElementException_0;
+  }
+  this$static.currentWidget = this$static.this$0.array[this$static.index_0];
+  ++this$static.index_0;
+  return this$static.currentWidget;
+}
+
+function WidgetCollection$WidgetIterator_0(this$0){
+  this.this$0 = this$0;
+}
+
+defineSeed(150, 1, {}, WidgetCollection$WidgetIterator_0);
+_.hasNext = function hasNext(){
+  return this.index_0 < this.this$0.size_0;
+}
+;
+_.next_0 = function next_0(){
+  return $next(this);
+}
+;
+_.index_0 = 0;
+function $getRuntimeValue(){
+  var ua = navigator.userAgent.toLowerCase();
+  var makeVersion = function(result){
+    return parseInt(result[1]) * 1000 + parseInt(result[2]);
+  }
+  ;
+  if (function(){
+    return ua.indexOf('webkit') != -1;
+  }
+  ())
+    return 'safari';
+  if (function(){
+    return ua.indexOf('msie') != -1 && $doc.documentMode >= 10;
+  }
+  ())
+    return 'ie10';
+  if (function(){
+    return ua.indexOf('msie') != -1 && $doc.documentMode >= 9;
+  }
+  ())
+    return 'ie9';
+  if (function(){
+    return ua.indexOf('msie') != -1 && $doc.documentMode >= 8;
+  }
+  ())
+    return 'ie8';
+  if (function(){
+    return ua.indexOf('gecko') != -1;
+  }
+  ())
+    return 'gecko1_8';
+  return 'unknown';
+}
+
+function SimpleEventBus$1_0(){
+}
+
+defineSeed(153, 1, {}, SimpleEventBus$1_0);
+function SimpleEventBus$2_0(this$0, val$type, val$handler){
+  this.this$0 = this$0;
+  this.val$type = val$type;
+  this.val$handler = val$handler;
+}
+
+defineSeed(154, 1, makeCastMap([Q$SimpleEventBus$Command]), SimpleEventBus$2_0);
+function ArrayStoreException_0(){
+  RuntimeException_0.call(this);
+}
+
+defineSeed(155, 22, makeCastMap([Q$Serializable, Q$Throwable]), ArrayStoreException_0);
+function Class_0(){
+}
+
+function createForArray(packageName, className, seedId){
+  var clazz;
+  clazz = new Class_0;
+  clazz.typeName = packageName + className;
+  isInstantiable(seedId != 0?-seedId:0) && setClassLiteral(seedId != 0?-seedId:0, clazz);
+  clazz.modifiers = 4;
+  return clazz;
+}
+
+function createForClass(packageName, className, seedId){
+  var clazz;
+  clazz = new Class_0;
+  clazz.typeName = packageName + className;
+  isInstantiable(seedId) && setClassLiteral(seedId, clazz);
+  return clazz;
+}
+
+function createForEnum(packageName, className, seedId, enumConstantsFunc){
+  var clazz;
+  clazz = new Class_0;
+  clazz.typeName = packageName + className;
+  isInstantiable(seedId) && setClassLiteral(seedId, clazz);
+  clazz.modifiers = enumConstantsFunc?8:0;
+  return clazz;
+}
+
+function getSeedFunction(clazz){
+  var func = seedTable[clazz.seedId];
+  clazz = null;
+  return func;
+}
+
+function isInstantiable(seedId){
+  return typeof seedId == 'number' && seedId > 0;
+}
+
+function setClassLiteral(seedId, clazz){
+  var proto;
+  clazz.seedId = seedId;
+  if (seedId == 2) {
+    proto = String.prototype;
+  }
+   else {
+    if (seedId > 0) {
+      var seed = getSeedFunction(clazz);
+      if (seed) {
+        proto = seed.prototype;
+      }
+       else {
+        seed = seedTable[seedId] = function(){
+        }
+        ;
+        seed.___clazz$ = clazz;
+        return;
+      }
+    }
+     else {
+      return;
+    }
+  }
+  proto.___clazz$ = clazz;
+}
+
+defineSeed(156, 1, {}, Class_0);
+_.toString$ = function toString_6(){
+  return ((this.modifiers & 2) != 0?'interface ':(this.modifiers & 1) != 0?'':'class ') + this.typeName;
+}
+;
+_.modifiers = 0;
+_.seedId = 0;
+function ClassCastException_0(){
+  RuntimeException_0.call(this);
+}
+
+defineSeed(157, 22, makeCastMap([Q$Serializable, Q$Throwable]), ClassCastException_0);
+function IllegalArgumentException_0(){
+  RuntimeException_0.call(this);
+}
+
+function IllegalArgumentException_1(message){
+  RuntimeException_1.call(this, message);
+}
+
+defineSeed(158, 22, makeCastMap([Q$Serializable, Q$Throwable]), IllegalArgumentException_0, IllegalArgumentException_1);
+function IllegalStateException_0(s){
+  RuntimeException_1.call(this, s);
+}
+
+defineSeed(159, 22, makeCastMap([Q$Serializable, Q$Throwable]), IllegalStateException_0);
+function IndexOutOfBoundsException_0(){
+  RuntimeException_0.call(this);
+}
+
+function IndexOutOfBoundsException_1(message){
+  RuntimeException_1.call(this, message);
+}
+
+defineSeed(160, 22, makeCastMap([Q$Serializable, Q$Throwable]), IndexOutOfBoundsException_0, IndexOutOfBoundsException_1);
+defineSeed(162, 1, makeCastMap([Q$Serializable, Q$Number]));
+function Integer_0(value_0){
+  this.value_0 = value_0;
+}
+
+function toPowerOfTwoString(value_0){
+  var buf, digits, pos;
+  buf = initDim(_3C_classLit, makeCastMap([Q$Serializable]), -1, 8, 1);
+  digits = ($clinit_Number$__Digits() , digits_0);
+  pos = 7;
+  if (value_0 >= 0) {
+    while (value_0 > 15) {
+      buf[pos--] = digits[value_0 & 15];
+      value_0 >>= 4;
+    }
+  }
+   else {
+    while (pos > 0) {
+      buf[pos--] = digits[value_0 & 15];
+      value_0 >>= 4;
+    }
+  }
+  buf[pos] = digits[value_0 & 15];
+  return __valueOf(buf, pos, 8);
+}
+
+function valueOf(i){
+  var rebase, result;
+  if (i > -129 && i < 128) {
+    rebase = i + 128;
+    result = ($clinit_Integer$BoxedValues() , boxedValues_0)[rebase];
+    !result && (result = boxedValues_0[rebase] = new Integer_0(i));
+    return result;
+  }
+  return new Integer_0(i);
+}
+
+defineSeed(161, 162, makeCastMap([Q$Serializable, Q$Comparable, Q$Integer, Q$Number]), Integer_0);
+_.equals$ = function equals_2(o){
+  return instanceOf(o, Q$Integer) && dynamicCast(o, Q$Integer).value_0 == this.value_0;
+}
+;
+_.hashCode$ = function hashCode_4(){
+  return this.value_0;
+}
+;
+_.toString$ = function toString_7(){
+  return '' + this.value_0;
+}
+;
+_.value_0 = 0;
+function $clinit_Integer$BoxedValues(){
+  $clinit_Integer$BoxedValues = nullMethod;
+  boxedValues_0 = initDim(_3Ljava_lang_Integer_2_classLit, makeCastMap([Q$Serializable]), Q$Integer, 256, 0);
+}
+
+var boxedValues_0;
+function cos_0(x_0){
+  return Math.cos(x_0);
+}
+
+function sin_0(x_0){
+  return Math.sin(x_0);
+}
+
+function sqrt_0(x_0){
+  return Math.sqrt(x_0);
+}
+
+function NullPointerException_0(){
+  RuntimeException_0.call(this);
+}
+
+function NullPointerException_1(message){
+  RuntimeException_1.call(this, message);
+}
+
+defineSeed(165, 22, makeCastMap([Q$Serializable, Q$Throwable]), NullPointerException_0, NullPointerException_1);
+function $clinit_Number$__Digits(){
+  $clinit_Number$__Digits = nullMethod;
+  digits_0 = initValues(_3C_classLit, makeCastMap([Q$Serializable]), -1, [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122]);
+}
+
+var digits_0;
+function StackTraceElement_0(methodName){
+  this.className_0 = 'Unknown';
+  this.methodName = methodName;
+  this.lineNumber = -1;
+}
+
+defineSeed(167, 1, makeCastMap([Q$Serializable, Q$StackTraceElement]), StackTraceElement_0);
+_.toString$ = function toString_8(){
+  return this.className_0 + '.' + this.methodName + '(Unknown Source' + (this.lineNumber >= 0?':' + this.lineNumber:'') + ')';
+}
+;
+_.lineNumber = 0;
+function $charAt(this$static, index_0){
+  return this$static.charCodeAt(index_0);
+}
+
+function $equals(this$static, other){
+  if (!instanceOf(other, Q$String)) {
+    return false;
+  }
+  return String(this$static) == other;
+}
+
+function $equalsIgnoreCase(this$static, other){
+  if (other == null)
+    return false;
+  return this$static == other || this$static.toLowerCase() == other.toLowerCase();
+}
+
+function $indexOf_0(this$static, str){
+  return this$static.indexOf(str);
+}
+
+function $trim(this$static){
+  if (this$static.length == 0 || this$static[0] > ' ' && this$static[this$static.length - 1] > ' ') {
+    return this$static;
+  }
+  var r1 = this$static.replace(/^(\s*)/, '');
+  var r2 = r1.replace(/\s*$/, '');
+  return r2;
+}
+
+function __valueOf(x_0, start_0, end){
+  x_0 = x_0.slice(start_0, end);
+  return String.fromCharCode.apply(null, x_0);
+}
+
+_ = String.prototype;
+_.castableTypeMap$ = makeCastMap([Q$String, Q$Serializable, Q$CharSequence, Q$Comparable]);
+_.equals$ = function equals_3(other){
+  return $equals(this, other);
+}
+;
+_.hashCode$ = function hashCode_5(){
+  return getHashCode_0(this);
+}
+;
+_.toString$ = _.toString;
+function $clinit_String$HashCache(){
+  $clinit_String$HashCache = nullMethod;
+  back_1 = {};
+  front_0 = {};
+}
+
+function compute(str){
+  var hashCode, i, n, nBatch;
+  hashCode = 0;
+  n = str.length;
+  nBatch = n - 4;
+  i = 0;
+  while (i < nBatch) {
+    hashCode = str.charCodeAt(i + 3) + 31 * (str.charCodeAt(i + 2) + 31 * (str.charCodeAt(i + 1) + 31 * (str.charCodeAt(i) + 31 * hashCode))) | 0;
+    i += 4;
+  }
+  while (i < n) {
+    hashCode = hashCode * 31 + $charAt(str, i++);
+  }
+  return hashCode | 0;
+}
+
+function getHashCode_0(str){
+  $clinit_String$HashCache();
+  var key = ':' + str;
+  var result = front_0[key];
+  if (result != null) {
+    return result;
+  }
+  result = back_1[key];
+  result == null && (result = compute(str));
+  increment();
+  return front_0[key] = result;
+}
+
+function increment(){
+  if (count_0 == 256) {
+    back_1 = front_0;
+    front_0 = {};
+    count_0 = 0;
+  }
+  ++count_0;
+}
+
+var back_1, count_0 = 0, front_0;
+function StringBuffer_0(){
+  this.impl = new StringBufferImplAppend_0;
+}
+
+defineSeed(169, 1, makeCastMap([Q$CharSequence]), StringBuffer_0);
+_.toString$ = function toString_9(){
+  return this.impl.string;
+}
+;
+function $append_0(this$static, x_0){
+  $append(this$static.impl, x_0);
+  return this$static;
+}
+
+function StringBuilder_0(s){
+  this.impl = new StringBufferImplAppend_0;
+  $append(this.impl, s);
+}
+
+defineSeed(170, 1, makeCastMap([Q$CharSequence]), StringBuilder_0);
+_.toString$ = function toString_10(){
+  return this.impl.string;
+}
+;
+function UnsupportedOperationException_0(message){
+  RuntimeException_1.call(this, message);
+}
+
+defineSeed(171, 22, makeCastMap([Q$Serializable, Q$Throwable]), UnsupportedOperationException_0);
+function $advanceToFind(iter, o){
+  var t;
+  while (iter.hasNext()) {
+    t = iter.next_0();
+    if (o == null?t == null:equals__devirtual$(o, t)) {
+      return iter;
+    }
+  }
+  return null;
+}
+
+function $toString(this$static){
+  var comma, iter, sb, value_0;
+  sb = new StringBuffer_0;
+  comma = null;
+  $append(sb.impl, '[');
+  iter = this$static.iterator();
+  while (iter.hasNext()) {
+    comma != null?($append(sb.impl, comma) , sb):(comma = ', ');
+    value_0 = iter.next_0();
+    $append(sb.impl, value_0 === this$static?'(this Collection)':'' + value_0);
+  }
+  $append(sb.impl, ']');
+  return sb.impl.string;
+}
+
+defineSeed(172, 1, {});
+_.add_0 = function add_1(o){
+  throw new UnsupportedOperationException_0('Add not supported on this collection');
+}
+;
+_.contains_0 = function contains(o){
+  var iter;
+  iter = $advanceToFind(this.iterator(), o);
+  return !!iter;
+}
+;
+_.toString$ = function toString_11(){
+  return $toString(this);
+}
+;
+function $keySet(this$static){
+  var entrySet;
+  entrySet = new AbstractHashMap$EntrySet_0(this$static);
+  return new AbstractMap$1_0(this$static, entrySet);
+}
+
+defineSeed(174, 1, makeCastMap([Q$Map]));
+_.equals$ = function equals_4(obj){
+  var entry, entry$iterator, otherKey, otherMap, otherValue;
+  if (obj === this) {
+    return true;
+  }
+  if (!instanceOf(obj, Q$Map)) {
+    return false;
+  }
+  otherMap = dynamicCast(obj, Q$Map);
+  if (this.size_0 != otherMap.size_0) {
+    return false;
+  }
+  for (entry$iterator = new AbstractHashMap$EntrySetIterator_0((new AbstractHashMap$EntrySet_0(otherMap)).this$0); $hasNext(entry$iterator.iter);) {
+    entry = dynamicCast($next_0(entry$iterator.iter), Q$Map$Entry);
+    otherKey = entry.getKey();
+    otherValue = entry.getValue();
+    if (!(otherKey == null?this.nullSlotLive:instanceOf(otherKey, Q$String)?$hasStringValue(this, dynamicCast(otherKey, Q$String)):$hasHashValue(this, otherKey, ~~hashCode__devirtual$(otherKey)))) {
+      return false;
+    }
+    if (!equalsWithNullCheck(otherValue, otherKey == null?this.nullSlot:instanceOf(otherKey, Q$String)?$getStringValue(this, dynamicCast(otherKey, Q$String)):$getHashValue(this, otherKey, ~~hashCode__devirtual$(otherKey)))) {
+      return false;
+    }
+  }
+  return true;
+}
+;
+_.hashCode$ = function hashCode_6(){
+  var entry, entry$iterator, hashCode;
+  hashCode = 0;
+  for (entry$iterator = new AbstractHashMap$EntrySetIterator_0((new AbstractHashMap$EntrySet_0(this)).this$0); $hasNext(entry$iterator.iter);) {
+    entry = dynamicCast($next_0(entry$iterator.iter), Q$Map$Entry);
+    hashCode += entry.hashCode$();
+    hashCode = ~~hashCode;
+  }
+  return hashCode;
+}
+;
+_.toString$ = function toString_12(){
+  var comma, entry, iter, s;
+  s = '{';
+  comma = false;
+  for (iter = new AbstractHashMap$EntrySetIterator_0((new AbstractHashMap$EntrySet_0(this)).this$0); $hasNext(iter.iter);) {
+    entry = dynamicCast($next_0(iter.iter), Q$Map$Entry);
+    comma?(s += ', '):(comma = true);
+    s += '' + entry.getKey();
+    s += '=';
+    s += '' + entry.getValue();
+  }
+  return s + '}';
+}
+;
+function $addAllHashEntries(this$static, dest){
+  var hashCodeMap = this$static.hashCodeMap;
+  for (var hashCode in hashCodeMap) {
+    var hashCodeInt = parseInt(hashCode, 10);
+    if (hashCode == hashCodeInt) {
+      var array = hashCodeMap[hashCodeInt];
+      for (var i = 0, c = array.length; i < c; ++i) {
+        dest.add_0(array[i]);
+      }
+    }
+  }
+}
+
+function $addAllStringEntries(this$static, dest){
+  var stringMap = this$static.stringMap;
+  for (var key in stringMap) {
+    if (key.charCodeAt(0) == 58) {
+      var entry = new AbstractHashMap$MapEntryString_0(this$static, key.substring(1));
+      dest.add_0(entry);
+    }
+  }
+}
+
+function $clearImpl(this$static){
+  this$static.hashCodeMap = [];
+  this$static.stringMap = {};
+  this$static.nullSlotLive = false;
+  this$static.nullSlot = null;
+  this$static.size_0 = 0;
+}
+
+function $containsKey(this$static, key){
+  return key == null?this$static.nullSlotLive:instanceOf(key, Q$String)?$hasStringValue(this$static, dynamicCast(key, Q$String)):$hasHashValue(this$static, key, ~~hashCode__devirtual$(key));
+}
+
+function $get(this$static, key){
+  return key == null?this$static.nullSlot:instanceOf(key, Q$String)?$getStringValue(this$static, dynamicCast(key, Q$String)):$getHashValue(this$static, key, ~~hashCode__devirtual$(key));
+}
+
+function $getHashValue(this$static, key, hashCode){
+  var array = this$static.hashCodeMap[hashCode];
+  if (array) {
+    for (var i = 0, c = array.length; i < c; ++i) {
+      var entry = array[i];
+      var entryKey = entry.getKey();
+      if (this$static.equalsBridge(key, entryKey)) {
+        return entry.getValue();
+      }
+    }
+  }
+  return null;
+}
+
+function $getStringValue(this$static, key){
+  return this$static.stringMap[':' + key];
+}
+
+function $hasHashValue(this$static, key, hashCode){
+  var array = this$static.hashCodeMap[hashCode];
+  if (array) {
+    for (var i = 0, c = array.length; i < c; ++i) {
+      var entry = array[i];
+      var entryKey = entry.getKey();
+      if (this$static.equalsBridge(key, entryKey)) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+function $hasStringValue(this$static, key){
+  return ':' + key in this$static.stringMap;
+}
+
+function $put(this$static, key, value_0){
+  return key == null?$putNullSlot(this$static, value_0):instanceOf(key, Q$String)?$putStringValue(this$static, dynamicCast(key, Q$String), value_0):$putHashValue(this$static, key, value_0, ~~hashCode__devirtual$(key));
+}
+
+function $putHashValue(this$static, key, value_0, hashCode){
+  var array = this$static.hashCodeMap[hashCode];
+  if (array) {
+    for (var i = 0, c = array.length; i < c; ++i) {
+      var entry = array[i];
+      var entryKey = entry.getKey();
+      if (this$static.equalsBridge(key, entryKey)) {
+        var previous = entry.getValue();
+        entry.setValue(value_0);
+        return previous;
+      }
+    }
+  }
+   else {
+    array = this$static.hashCodeMap[hashCode] = [];
+  }
+  var entry = new MapEntryImpl_0(key, value_0);
+  array.push(entry);
+  ++this$static.size_0;
+  return null;
+}
+
+function $putNullSlot(this$static, value_0){
+  var result;
+  result = this$static.nullSlot;
+  this$static.nullSlot = value_0;
+  if (!this$static.nullSlotLive) {
+    this$static.nullSlotLive = true;
+    ++this$static.size_0;
+  }
+  return result;
+}
+
+function $putStringValue(this$static, key, value_0){
+  var result, stringMap = this$static.stringMap;
+  key = ':' + key;
+  key in stringMap?(result = stringMap[key]):++this$static.size_0;
+  stringMap[key] = value_0;
+  return result;
+}
+
+function $remove_3(this$static, key){
+  return !key?$removeNullSlot(this$static):$removeHashValue(this$static, key, ~~getHashCode(key));
+}
+
+function $removeHashValue(this$static, key, hashCode){
+  var array = this$static.hashCodeMap[hashCode];
+  if (array) {
+    for (var i = 0, c = array.length; i < c; ++i) {
+      var entry = array[i];
+      var entryKey = entry.getKey();
+      if (this$static.equalsBridge(key, entryKey)) {
+        array.length == 1?delete this$static.hashCodeMap[hashCode]:array.splice(i, 1);
+        --this$static.size_0;
+        return entry.getValue();
+      }
+    }
+  }
+  return null;
+}
+
+function $removeNullSlot(this$static){
+  var result;
+  result = this$static.nullSlot;
+  this$static.nullSlot = null;
+  if (this$static.nullSlotLive) {
+    this$static.nullSlotLive = false;
+    --this$static.size_0;
+  }
+  return result;
+}
+
+defineSeed(173, 174, makeCastMap([Q$Map]));
+_.equalsBridge = function equalsBridge(value1, value2){
+  return maskUndefined(value1) === maskUndefined(value2) || value1 != null && equals__devirtual$(value1, value2);
+}
+;
+_.nullSlotLive = false;
+_.size_0 = 0;
+defineSeed(176, 172, makeCastMap([Q$Set]));
+_.equals$ = function equals_5(o){
+  var iter, other, otherItem;
+  if (o === this) {
+    return true;
+  }
+  if (!instanceOf(o, Q$Set)) {
+    return false;
+  }
+  other = dynamicCast(o, Q$Set);
+  if (other.size_1() != this.size_1()) {
+    return false;
+  }
+  for (iter = other.iterator(); iter.hasNext();) {
+    otherItem = iter.next_0();
+    if (!this.contains_0(otherItem)) {
+      return false;
+    }
+  }
+  return true;
+}
+;
+_.hashCode$ = function hashCode_7(){
+  var hashCode, iter, next;
+  hashCode = 0;
+  for (iter = this.iterator(); iter.hasNext();) {
+    next = iter.next_0();
+    if (next != null) {
+      hashCode += hashCode__devirtual$(next);
+      hashCode = ~~hashCode;
+    }
+  }
+  return hashCode;
+}
+;
+function $contains(this$static, o){
+  var entry, key, value_0;
+  if (instanceOf(o, Q$Map$Entry)) {
+    entry = dynamicCast(o, Q$Map$Entry);
+    key = entry.getKey();
+    if ($containsKey(this$static.this$0, key)) {
+      value_0 = $get(this$static.this$0, key);
+      return $equals_0(entry.getValue(), value_0);
+    }
+  }
+  return false;
+}
+
+function AbstractHashMap$EntrySet_0(this$0){
+  this.this$0 = this$0;
+}
+
+defineSeed(175, 176, makeCastMap([Q$Set]), AbstractHashMap$EntrySet_0);
+_.contains_0 = function contains_0(o){
+  return $contains(this, o);
+}
+;
+_.iterator = function iterator_2(){
+  return new AbstractHashMap$EntrySetIterator_0(this.this$0);
+}
+;
+_.size_1 = function size_1(){
+  return this.this$0.size_0;
+}
+;
+function AbstractHashMap$EntrySetIterator_0(this$0){
+  var list;
+  list = new ArrayList_0;
+  this$0.nullSlotLive && $add_4(list, new AbstractHashMap$MapEntryNull_0(this$0));
+  $addAllStringEntries(this$0, list);
+  $addAllHashEntries(this$0, list);
+  this.iter = new AbstractList$IteratorImpl_0(list);
+}
+
+defineSeed(177, 1, {}, AbstractHashMap$EntrySetIterator_0);
+_.hasNext = function hasNext_0(){
+  return $hasNext(this.iter);
+}
+;
+_.next_0 = function next_1(){
+  return dynamicCast($next_0(this.iter), Q$Map$Entry);
+}
+;
+defineSeed(179, 1, makeCastMap([Q$Map$Entry]));
+_.equals$ = function equals_6(other){
+  var entry;
+  if (instanceOf(other, Q$Map$Entry)) {
+    entry = dynamicCast(other, Q$Map$Entry);
+    if (equalsWithNullCheck(this.getKey(), entry.getKey()) && equalsWithNullCheck(this.getValue(), entry.getValue())) {
+      return true;
+    }
+  }
+  return false;
+}
+;
+_.hashCode$ = function hashCode_8(){
+  var keyHash, valueHash;
+  keyHash = 0;
+  valueHash = 0;
+  this.getKey() != null && (keyHash = hashCode__devirtual$(this.getKey()));
+  this.getValue() != null && (valueHash = hashCode__devirtual$(this.getValue()));
+  return keyHash ^ valueHash;
+}
+;
+_.toString$ = function toString_13(){
+  return this.getKey() + '=' + this.getValue();
+}
+;
+function AbstractHashMap$MapEntryNull_0(this$0){
+  this.this$0 = this$0;
+}
+
+defineSeed(178, 179, makeCastMap([Q$Map$Entry]), AbstractHashMap$MapEntryNull_0);
+_.getKey = function getKey(){
+  return null;
+}
+;
+_.getValue = function getValue(){
+  return this.this$0.nullSlot;
+}
+;
+_.setValue = function setValue(object){
+  return $putNullSlot(this.this$0, object);
+}
+;
+function AbstractHashMap$MapEntryString_0(this$0, key){
+  this.this$0 = this$0;
+  this.key = key;
+}
+
+defineSeed(180, 179, makeCastMap([Q$Map$Entry]), AbstractHashMap$MapEntryString_0);
+_.getKey = function getKey_0(){
+  return this.key;
+}
+;
+_.getValue = function getValue_0(){
+  return $getStringValue(this.this$0, this.key);
+}
+;
+_.setValue = function setValue_0(object){
+  return $putStringValue(this.this$0, this.key, object);
+}
+;
+function checkIndex(index_0, size_0){
+  (index_0 < 0 || index_0 >= size_0) && indexOutOfBounds(index_0, size_0);
+}
+
+function indexOutOfBounds(index_0, size_0){
+  throw new IndexOutOfBoundsException_1('Index: ' + index_0 + ', Size: ' + size_0);
+}
+
+defineSeed(181, 172, makeCastMap([Q$List]));
+_.add_1 = function add_2(index_0, element){
+  throw new UnsupportedOperationException_0('Add not supported on this list');
+}
+;
+_.add_0 = function add_3(obj){
+  this.add_1(this.size_1(), obj);
+  return true;
+}
+;
+_.equals$ = function equals_7(o){
+  var elem, elemOther, iter, iterOther, other;
+  if (o === this) {
+    return true;
+  }
+  if (!instanceOf(o, Q$List)) {
+    return false;
+  }
+  other = dynamicCast(o, Q$List);
+  if (this.size_1() != other.size_1()) {
+    return false;
+  }
+  iter = new AbstractList$IteratorImpl_0(this);
+  iterOther = other.iterator();
+  while (iter.i < iter.this$0_0.size_1()) {
+    elem = $next_0(iter);
+    elemOther = $next_0(iterOther);
+    if (!(elem == null?elemOther == null:equals__devirtual$(elem, elemOther))) {
+      return false;
+    }
+  }
+  return true;
+}
+;
+_.hashCode$ = function hashCode_9(){
+  var iter, k, obj;
+  k = 1;
+  iter = new AbstractList$IteratorImpl_0(this);
+  while (iter.i < iter.this$0_0.size_1()) {
+    obj = $next_0(iter);
+    k = 31 * k + (obj == null?0:hashCode__devirtual$(obj));
+    k = ~~k;
+  }
+  return k;
+}
+;
+_.iterator = function iterator_3(){
+  return new AbstractList$IteratorImpl_0(this);
+}
+;
+_.listIterator = function listIterator(){
+  return new AbstractList$ListIteratorImpl_0(this, 0);
+}
+;
+_.listIterator_0 = function listIterator_0(from){
+  return new AbstractList$ListIteratorImpl_0(this, from);
+}
+;
+function $hasNext(this$static){
+  return this$static.i < this$static.this$0_0.size_1();
+}
+
+--></script>
+<script><!--
+function $next_0(this$static){
+  if (this$static.i >= this$static.this$0_0.size_1()) {
+    throw new NoSuchElementException_0;
+  }
+  return this$static.this$0_0.get_0(this$static.i++);
+}
+
+function AbstractList$IteratorImpl_0(this$0){
+  this.this$0_0 = this$0;
+}
+
+defineSeed(182, 1, {}, AbstractList$IteratorImpl_0);
+_.hasNext = function hasNext_1(){
+  return $hasNext(this);
+}
+;
+_.next_0 = function next_2(){
+  return $next_0(this);
+}
+;
+_.i = 0;
+function $previous(this$static){
+  if (this$static.i <= 0) {
+    throw new NoSuchElementException_0;
+  }
+  return this$static.this$0.get_0(--this$static.i);
+}
+
+function AbstractList$ListIteratorImpl_0(this$0, start_0){
+  var size_0;
+  this.this$0 = this$0;
+  AbstractList$IteratorImpl_0.call(this, this$0);
+  size_0 = this$0.size_1();
+  (start_0 < 0 || start_0 > size_0) && indexOutOfBounds(start_0, size_0);
+  this.i = start_0;
+}
+
+defineSeed(183, 182, {}, AbstractList$ListIteratorImpl_0);
+function $iterator(this$static){
+  var outerIter;
+  outerIter = new AbstractHashMap$EntrySetIterator_0(this$static.val$entrySet.this$0);
+  return new AbstractMap$1$1_0(outerIter);
+}
+
+function AbstractMap$1_0(this$0, val$entrySet){
+  this.this$0 = this$0;
+  this.val$entrySet = val$entrySet;
+}
+
+defineSeed(184, 176, makeCastMap([Q$Set]), AbstractMap$1_0);
+_.contains_0 = function contains_1(key){
+  return $containsKey(this.this$0, key);
+}
+;
+_.iterator = function iterator_4(){
+  return $iterator(this);
+}
+;
+_.size_1 = function size_2(){
+  return this.val$entrySet.this$0.size_0;
+}
+;
+function AbstractMap$1$1_0(val$outerIter){
+  this.val$outerIter = val$outerIter;
+}
+
+defineSeed(185, 1, {}, AbstractMap$1$1_0);
+_.hasNext = function hasNext_2(){
+  return $hasNext(this.val$outerIter.iter);
+}
+;
+_.next_0 = function next_3(){
+  var entry;
+  entry = dynamicCast($next_0(this.val$outerIter.iter), Q$Map$Entry);
+  return entry.getKey();
+}
+;
+function $$init(this$static){
+  this$static.array = initDim(_3Ljava_lang_Object_2_classLit, makeCastMap([Q$Serializable]), Q$Object, 0, 0);
+}
+
+function $add_4(this$static, o){
+  setCheck(this$static.array, this$static.size_0++, o);
+  return true;
+}
+
+function $get_0(this$static, index_0){
+  checkIndex(index_0, this$static.size_0);
+  return this$static.array[index_0];
+}
+
+function $indexOf_1(this$static, o, index_0){
+  for (; index_0 < this$static.size_0; ++index_0) {
+    if (equalsWithNullCheck(o, this$static.array[index_0])) {
+      return index_0;
+    }
+  }
+  return -1;
+}
+
+function ArrayList_0(){
+  $$init(this);
+}
+
+function ArrayList_1(initialCapacity){
+  $$init(this);
+  setCapacity(this.array, initialCapacity);
+}
+
+function setCapacity(array, newSize){
+  array.length = newSize;
+}
+
+function splice(array, index_0, deleteCount, value_0){
+  array.splice(index_0, deleteCount, value_0);
+}
+
+defineSeed(186, 181, makeCastMap([Q$Serializable, Q$List]), ArrayList_0, ArrayList_1);
+_.add_1 = function add_4(index_0, o){
+  (index_0 < 0 || index_0 > this.size_0) && indexOutOfBounds(index_0, this.size_0);
+  splice(this.array, index_0, 0, o);
+  ++this.size_0;
+}
+;
+_.add_0 = function add_5(o){
+  return $add_4(this, o);
+}
+;
+_.contains_0 = function contains_2(o){
+  return $indexOf_1(this, o, 0) != -1;
+}
+;
+_.get_0 = function get_1(index_0){
+  return $get_0(this, index_0);
+}
+;
+_.size_1 = function size_3(){
+  return this.size_0;
+}
+;
+_.size_0 = 0;
+function $clinit_Collections(){
+  $clinit_Collections = nullMethod;
+  EMPTY_LIST = new Collections$EmptyList_0;
+}
+
+function addAll(c, a){
+  $clinit_Collections();
+  var e, e$index, e$max, result;
+  result = false;
+  for (e$index = 0 , e$max = a.length; e$index < e$max; ++e$index) {
+    e = a[e$index];
+    result = result | (setCheck(c.array, c.size_0++, e) , true);
+  }
+  return result;
+}
+
+var EMPTY_LIST;
+function Collections$EmptyList_0(){
+}
+
+defineSeed(188, 181, makeCastMap([Q$Serializable, Q$List]), Collections$EmptyList_0);
+_.contains_0 = function contains_3(object){
+  return false;
+}
+;
+_.get_0 = function get_2(location_0){
+  throw new IndexOutOfBoundsException_0;
+}
+;
+_.size_1 = function size_4(){
+  return 0;
+}
+;
+function $equals_0(value1, value2){
+  return maskUndefined(value1) === maskUndefined(value2) || value1 != null && equals__devirtual$(value1, value2);
+}
+
+function HashMap_0(){
+  $clearImpl(this);
+}
+
+defineSeed(189, 173, makeCastMap([Q$Serializable, Q$Map]), HashMap_0);
+function $add_5(this$static, o){
+  var old;
+  old = $put(this$static.map_0, o, this$static);
+  return old == null;
+}
+
+function $contains_0(this$static, o){
+  return $containsKey(this$static.map_0, o);
+}
+
+function $remove_4(this$static, o){
+  return $remove_3(this$static.map_0, o) != null;
+}
+
+function HashSet_0(){
+  this.map_0 = new HashMap_0;
+}
+
+defineSeed(190, 176, makeCastMap([Q$Serializable, Q$Set]), HashSet_0);
+_.add_0 = function add_6(o){
+  return $add_5(this, o);
+}
+;
+_.contains_0 = function contains_4(o){
+  return $contains_0(this, o);
+}
+;
+_.iterator = function iterator_5(){
+  return $iterator($keySet(this.map_0));
+}
+;
+_.size_1 = function size_5(){
+  return this.map_0.size_0;
+}
+;
+_.toString$ = function toString_14(){
+  return $toString($keySet(this.map_0));
+}
+;
+function MapEntryImpl_0(key, value_0){
+  this.key = key;
+  this.value_0 = value_0;
+}
+
+defineSeed(191, 179, makeCastMap([Q$Map$Entry]), MapEntryImpl_0);
+_.getKey = function getKey_1(){
+  return this.key;
+}
+;
+_.getValue = function getValue_1(){
+  return this.value_0;
+}
+;
+_.setValue = function setValue_1(value_0){
+  var old;
+  old = this.value_0;
+  this.value_0 = value_0;
+  return old;
+}
+;
+function NoSuchElementException_0(){
+  RuntimeException_0.call(this);
+}
+
+defineSeed(192, 22, makeCastMap([Q$Serializable, Q$Throwable]), NoSuchElementException_0);
+function equalsWithNullCheck(a, b){
+  return maskUndefined(a) === maskUndefined(b) || a != null && equals__devirtual$(a, b);
+}
+
+function IntegerRange_0(start_0, end){
+  IntegerRange_1.call(this, start_0, end, end >= start_0?1:-1);
+}
+
+function IntegerRange_1(start_0, end, step){
+  if ((end - start_0) * step < 0)
+    throw new IllegalArgumentException_1('The step of an IntegerRange must have the correct sign.');
+  if (step == 0)
+    throw new IllegalArgumentException_1('The step of an IntegerRange must not be 0');
+  this.start_0 = start_0;
+  this.end = end;
+  this.step = step;
+}
+
+defineSeed(194, 1, {}, IntegerRange_0);
+_.iterator = function iterator_6(){
+  return new IntegerRange$RangeIterator_0(this);
+}
+;
+_.end = 0;
+_.start_0 = 0;
+_.step = 0;
+function $next_1(this$static){
+  var value_0;
+  if (!(this$static.this$0.step < 0?this$static.next >= this$static.this$0.end:this$static.next <= this$static.this$0.end)) {
+    throw new NoSuchElementException_0;
+  }
+  value_0 = this$static.next;
+  this$static.next += this$static.this$0.step;
+  ++this$static.nextIndex;
+  return valueOf(value_0);
+}
+
+function IntegerRange$RangeIterator_0(this$0){
+  this.this$0 = this$0;
+  this.next = this.this$0.start_0;
+}
+
+defineSeed(195, 1, {}, IntegerRange$RangeIterator_0);
+_.hasNext = function hasNext_3(){
+  return this.this$0.step < 0?this.next >= this.this$0.end:this.next <= this.this$0.end;
+}
+;
+_.next_0 = function next_4(){
+  return $next_1(this);
+}
+;
+_.next = 0;
+_.nextIndex = 0;
+function forEach(iterable, procedure){
+  var t, t$iterator;
+  if (!procedure)
+    throw new NullPointerException_1('procedure');
+  for (t$iterator = new AbstractList$IteratorImpl_0(iterable); t$iterator.i < t$iterator.this$0_0.size_1();) {
+    t = $next_0(t$iterator);
+    $apply(procedure, dynamicCast(t, Q$Logo));
+  }
+}
+
+function Pair_0(k, v){
+  this.k = k;
+  this.v = v;
+}
+
+defineSeed(197, 1, makeCastMap([Q$Pair]), Pair_0);
+_.equals$ = function equals_8(o){
+  var e;
+  if (o === this)
+    return true;
+  if (!instanceOf(o, Q$Pair))
+    return false;
+  e = dynamicCast(o, Q$Pair);
+  return equal(this.k, e.k) && equal(this.v, e.v);
+}
+;
+_.hashCode$ = function hashCode_10(){
+  return (!this.k?0:this.k.value_0) ^ (!this.v?0:this.v.value_0);
+}
+;
+_.toString$ = function toString_15(){
+  return this.k + '->' + this.v;
+}
+;
+var $entry = registerEntry();
+function gwtOnLoad(errFn, modName, modBase, softPermutationId){
+  $moduleName = modName;
+  $moduleBase = modBase;
+  if (errFn)
+    try {
+      $entry(init)();
+    }
+     catch (e) {
+      errFn(modName);
+    }
+   else {
+    $entry(init)();
+  }
+}
+
+var Ljava_lang_Object_2_classLit = createForClass('java.lang.', 'Object', 1), Lcom_google_gwt_core_client_Scheduler_2_classLit = createForClass('com.google.gwt.core.client.', 'Scheduler', 27), Lcom_google_gwt_core_client_JavaScriptObject_2_classLit = createForClass('com.google.gwt.core.client.', 'JavaScriptObject$', 14), _3Ljava_lang_Object_2_classLit = createForArray('[Ljava.lang.', 'Object;', 198), Ljava_lang_Throwable_2_classLit = createForClass('java.lang.', 'Throwable', 24), Ljava_lang_Exception_2_classLit = createForClass('java.lang.', 'Exception', 23), Ljava_lang_RuntimeException_2_classLit = createForClass('java.lang.', 'RuntimeException', 22), Ljava_lang_StackTraceElement_2_classLit = createForClass('java.lang.', 'StackTraceElement', 167), _3Ljava_lang_StackTraceElement_2_classLit = createForArray('[Ljava.lang.', 'StackTraceElement;', 199), Lcom_google_gwt_user_client_Timer_2_classLit = createForClass('com.google.gwt.user.client.', 'Timer', 87), Lcom_google_gwt_gwtcanvasdemo_client_GwtCanvasDemo_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'GwtCanvasDemo', 86), Lcom_google_gwt_gwtcanvasdemo_client_GwtCanvasDemo$1_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'GwtCanvasDemo$1', 88), Lcom_google_gwt_gwtcanvasdemo_client_GwtCanvasDemo$2_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'GwtCanvasDemo$2', 89), Lcom_google_gwt_gwtcanvasdemo_client_GwtCanvasDemo$3_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'GwtCanvasDemo$3', 90), Lcom_google_gwt_gwtcanvasdemo_client_GwtCanvasDemo$4_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'GwtCanvasDemo$4', 91), Lcom_google_gwt_gwtcanvasdemo_client_GwtCanvasDemo$5_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'GwtCanvasDemo$5', 92), _3Lcom_google_gwt_lang_LongLibBase$LongEmul_2_classLit = createForArray('[Lcom.google.gwt.lang.', 'LongLibBase$LongEmul;', 200), Lcom_google_gwt_lang_SeedUtil_2_classLit = createForClass('com.google.gwt.lang.', 'SeedUtil', 110), Ljava_lang_Enum_2_classLit = createForClass('java.lang.', 'Enum', 53), Ljava_lang_Number_2_classLit = createForClass('java.lang.', 'Number', 162), _3C_classLit = createForArray('', '[C', 201), Ljava_lang_Class_2_classLit = createForClass('java.lang.', 'Class', 156), Ljava_lang_Integer_2_classLit = createForClass('java.lang.', 'Integer', 161), _3Ljava_lang_Integer_2_classLit = createForArray('[Ljava.lang.', 'Integer;', 202), Ljava_lang_String_2_classLit = createForClass('java.lang.', 'String', 2), _3Ljava_lang_String_2_classLit = createForArray('[Ljava.lang.', 'String;', 203), Ljava_lang_ClassCastException_2_classLit = createForClass('java.lang.', 'ClassCastException', 157), Lcom_google_gwt_core_client_JavaScriptException_2_classLit = createForClass('com.google.gwt.core.client.', 'JavaScriptException', 21), Ljava_lang_StringBuilder_2_classLit = createForClass('java.lang.', 'StringBuilder', 170), Ljava_lang_ArrayStoreException_2_classLit = createForClass('java.lang.', 'ArrayStoreException', 155), Lcom_google_gwt_user_client_ui_UIObject_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'UIObject', 10), Lcom_google_gwt_user_client_ui_Widget_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Widget', 9), Lcom_google_gwt_user_client_ui_FocusWidget_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'FocusWidget', 8), Lcom_google_gwt_canvas_client_Canvas_2_classLit = createForClass('com.google.gwt.canvas.client.', 'Canvas', 7), Lcom_google_gwt_canvas_client_Canvas$CanvasElementSupportDetector_2_classLit = createForClass('com.google.gwt.canvas.client.', 'Canvas$CanvasElementSupportDetector', 12), Lcom_google_gwt_canvas_client_Canvas$CanvasElementSupportDetectedMaybe_2_classLit = createForClass('com.google.gwt.canvas.client.', 'Canvas$CanvasElementSupportDetectedMaybe', 11), Lcom_google_gwt_user_client_ui_Panel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Panel', 133), Lcom_google_gwt_user_client_ui_ComplexPanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'ComplexPanel', 132), Lcom_google_gwt_user_client_ui_AbsolutePanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'AbsolutePanel', 131), Lcom_google_gwt_user_client_ui_RootPanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'RootPanel', 145), Lcom_google_gwt_user_client_ui_RootPanel$DefaultRootPanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'RootPanel$DefaultRootPanel', 148), Lcom_google_gwt_user_client_ui_RootPanel$1_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'RootPanel$1', 146), Lcom_google_gwt_user_client_ui_RootPanel$3_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'RootPanel$3', 147), Lcom_google_web_bindery_event_shared_UmbrellaException_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'UmbrellaException', 82), Lcom_google_gwt_event_shared_UmbrellaException_2_classLit = createForClass('com.google.gwt.event.shared.', 'UmbrellaException', 81), Lcom_google_gwt_user_client_ui_AttachDetachException_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'AttachDetachException', 134), Lcom_google_gwt_user_client_ui_AttachDetachException$1_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'AttachDetachException$1', 135), Lcom_google_gwt_user_client_ui_AttachDetachException$2_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'AttachDetachException$2', 136), Lcom_google_gwt_user_client_ui_LabelBase_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'LabelBase', 143), Lcom_google_gwt_user_client_ui_Label_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Label', 142), Lcom_google_gwt_i18n_client_HasDirection$Direction_2_classLit = createForEnum('com.google.gwt.i18n.client.', 'HasDirection$Direction', 101, values_0), _3Lcom_google_gwt_i18n_client_HasDirection$Direction_2_classLit = createForArray('[Lcom.google.gwt.i18n.client.', 'HasDirection$Direction;', 204), Lcom_google_gwt_gwtcanvasdemo_client_LogoGroup_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'LogoGroup', 95), Lcom_google_gwt_gwtcanvasdemo_client_SpringObject_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'SpringObject', 84), Lcom_google_gwt_gwtcanvasdemo_client_Logo_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'Logo', 94), _3Lcom_google_gwt_gwtcanvasdemo_client_Logo_2_classLit = createForArray('[Lcom.google.gwt.gwtcanvasdemo.client.', 'Logo;', 205), Lcom_google_gwt_gwtcanvasdemo_client_LogoGroup$1_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'LogoGroup$1', 96), Lcom_google_gwt_gwtcanvasdemo_client_LogoGroup$1$1_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'LogoGroup$1$1', 97), Lcom_google_gwt_gwtcanvasdemo_client_LogoGroup$2_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'LogoGroup$2', 98), Lcom_google_gwt_gwtcanvasdemo_client_BallGroup_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'BallGroup', 85), Lcom_google_gwt_gwtcanvasdemo_client_Ball_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'Ball', 83), _3Lcom_google_gwt_gwtcanvasdemo_client_Ball_2_classLit = createForArray('[Lcom.google.gwt.gwtcanvasdemo.client.', 'Ball;', 206), Lcom_google_gwt_gwtcanvasdemo_client_Vector_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'Vector', 99), Lorg_eclipse_xtext_xbase_lib_Pair_2_classLit = createForClass('org.eclipse.xtext.xbase.lib.', 'Pair', 197), _3Lorg_eclipse_xtext_xbase_lib_Pair_2_classLit = createForArray('[Lorg.eclipse.xtext.xbase.lib.', 'Pair;', 207), Lcom_google_gwt_gwtcanvasdemo_client_Lens_2_classLit = createForClass('com.google.gwt.gwtcanvasdemo.client.', 'Lens', 93), Ljava_lang_NullPointerException_2_classLit = createForClass('java.lang.', 'NullPointerException', 165), Ljava_lang_IllegalArgumentException_2_classLit = createForClass('java.lang.', 'IllegalArgumentException', 158), Lcom_google_gwt_core_client_impl_StringBufferImpl_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'StringBufferImpl', 35), Ljava_util_AbstractMap_2_classLit = createForClass('java.util.', 'AbstractMap', 174), Ljava_util_AbstractHashMap_2_classLit = createForClass('java.util.', 'AbstractHashMap', 173), Ljava_util_HashMap_2_classLit = createForClass('java.util.', 'HashMap', 189), Ljava_util_AbstractCollection_2_classLit = createForClass('java.util.', 'AbstractCollection', 172), Ljava_util_AbstractSet_2_classLit = createForClass('java.util.', 'AbstractSet', 176), Ljava_util_AbstractHashMap$EntrySet_2_classLit = createForClass('java.util.', 'AbstractHashMap$EntrySet', 175), Ljava_util_AbstractHashMap$EntrySetIterator_2_classLit = createForClass('java.util.', 'AbstractHashMap$EntrySetIterator', 177), Ljava_util_AbstractMapEntry_2_classLit = createForClass('java.util.', 'AbstractMapEntry', 179), Ljava_util_AbstractHashMap$MapEntryNull_2_classLit = createForClass('java.util.', 'AbstractHashMap$MapEntryNull', 178), Ljava_util_AbstractHashMap$MapEntryString_2_classLit = createForClass('java.util.', 'AbstractHashMap$MapEntryString', 180), Ljava_util_AbstractMap$1_2_classLit = createForClass('java.util.', 'AbstractMap$1', 184), Ljava_util_AbstractMap$1$1_2_classLit = createForClass('java.util.', 'AbstractMap$1$1', 185), Ljava_util_HashSet_2_classLit = createForClass('java.util.', 'HashSet', 190), Lcom_google_gwt_dom_client_Style$TextAlign_2_classLit = createForEnum('com.google.gwt.dom.client.', 'Style$TextAlign', 52, values), _3Lcom_google_gwt_dom_client_Style$TextAlign_2_classLit = createForArray('[Lcom.google.gwt.dom.client.', 'Style$TextAlign;', 208), Lcom_google_gwt_dom_client_Style$TextAlign$1_2_classLit = createForEnum('com.google.gwt.dom.client.', 'Style$TextAlign$1', 54, null), Lcom_google_gwt_dom_client_Style$TextAlign$2_2_classLit = createForEnum('com.google.gwt.dom.client.', 'Style$TextAlign$2', 55, null), Lcom_google_gwt_dom_client_Style$TextAlign$3_2_classLit = createForEnum('com.google.gwt.dom.client.', 'Style$TextAlign$3', 56, null), Lcom_google_gwt_dom_client_Style$TextAlign$4_2_classLit = createForEnum('com.google.gwt.dom.client.', 'Style$TextAlign$4', 57, null), Ljava_util_AbstractList_2_classLit = createForClass('java.util.', 'AbstractList', 181), Ljava_util_ArrayList_2_classLit = createForClass('java.util.', 'ArrayList', 186), Ljava_util_AbstractList$IteratorImpl_2_classLit = createForClass('java.util.', 'AbstractList$IteratorImpl', 182), Ljava_util_AbstractList$ListIteratorImpl_2_classLit = createForClass('java.util.', 'AbstractList$ListIteratorImpl', 183), Lcom_google_gwt_user_client_ui_Image_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Image', 138), Lcom_google_gwt_user_client_ui_Image$State_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Image$State', 139), Lcom_google_gwt_user_client_ui_Image$UnclippedState_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Image$UnclippedState', 141), Lcom_google_gwt_user_client_ui_Image$State$1_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Image$State$1', 140), Lorg_eclipse_xtext_xbase_lib_IntegerRange_2_classLit = createForClass('org.eclipse.xtext.xbase.lib.', 'IntegerRange', 194), Lorg_eclipse_xtext_xbase_lib_IntegerRange$RangeIterator_2_classLit = createForClass('org.eclipse.xtext.xbase.lib.', 'IntegerRange$RangeIterator', 195), Lcom_google_gwt_core_client_impl_StackTraceCreator$Collector_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'StackTraceCreator$Collector', 34), Lcom_google_gwt_core_client_impl_StringBufferImplAppend_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'StringBufferImplAppend', 36), Lcom_google_gwt_core_client_Duration_2_classLit = createForClass('com.google.gwt.core.client.', 'Duration', 19), Lcom_google_gwt_core_client_impl_SchedulerImpl_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'SchedulerImpl', 29), Lcom_google_gwt_core_client_impl_SchedulerImpl$Flusher_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'SchedulerImpl$Flusher', 30), Lcom_google_gwt_core_client_impl_SchedulerImpl$Rescuer_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'SchedulerImpl$Rescuer', 31), Lcom_google_web_bindery_event_shared_Event_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'Event', 60), Lcom_google_gwt_event_shared_GwtEvent_2_classLit = createForClass('com.google.gwt.event.shared.', 'GwtEvent', 59), Lcom_google_gwt_user_client_Window$ClosingEvent_2_classLit = createForClass('com.google.gwt.user.client.', 'Window$ClosingEvent', 121), Lcom_google_gwt_event_shared_HandlerManager_2_classLit = createForClass('com.google.gwt.event.shared.', 'HandlerManager', 76), Lcom_google_gwt_user_client_Window$WindowHandlers_2_classLit = createForClass('com.google.gwt.user.client.', 'Window$WindowHandlers', 122), Lcom_google_web_bindery_event_shared_Event$Type_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'Event$Type', 63), Lcom_google_gwt_event_shared_GwtEvent$Type_2_classLit = createForClass('com.google.gwt.event.shared.', 'GwtEvent$Type', 62), Lcom_google_web_bindery_event_shared_EventBus_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'EventBus', 79), Lcom_google_web_bindery_event_shared_SimpleEventBus_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'SimpleEventBus', 78), Lcom_google_gwt_event_shared_HandlerManager$Bus_2_classLit = createForClass('com.google.gwt.event.shared.', 'HandlerManager$Bus', 77), Lcom_google_web_bindery_event_shared_SimpleEventBus$1_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'SimpleEventBus$1', 153), Lcom_google_web_bindery_event_shared_SimpleEventBus$2_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'SimpleEventBus$2', 154), Lcom_google_gwt_user_client_ui_DirectionalTextHelper_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'DirectionalTextHelper', 137), Lcom_google_gwt_user_client_ui_WidgetCollection_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'WidgetCollection', 149), _3Lcom_google_gwt_user_client_ui_Widget_2_classLit = createForArray('[Lcom.google.gwt.user.client.ui.', 'Widget;', 209), Lcom_google_gwt_user_client_ui_WidgetCollection$WidgetIterator_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'WidgetCollection$WidgetIterator', 150), Lcom_google_gwt_event_dom_client_DomEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'DomEvent', 58), Lcom_google_gwt_event_dom_client_LoadEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'LoadEvent', 66), Lcom_google_gwt_event_dom_client_DomEvent$Type_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'DomEvent$Type', 61), Lcom_google_gwt_event_dom_client_HumanInputEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'HumanInputEvent', 65), Lcom_google_gwt_event_dom_client_MouseEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'MouseEvent', 67), Lcom_google_gwt_event_dom_client_MouseMoveEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'MouseMoveEvent', 68), Lcom_google_gwt_event_dom_client_MouseOutEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'MouseOutEvent', 69), Lcom_google_gwt_event_dom_client_TouchEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'TouchEvent', 73), Lcom_google_gwt_event_dom_client_TouchMoveEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'TouchMoveEvent', 74), Lcom_google_gwt_event_dom_client_TouchEndEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'TouchEndEvent', 72), Lcom_google_gwt_event_dom_client_GestureStartEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'GestureStartEvent', 64), Ljava_lang_UnsupportedOperationException_2_classLit = createForClass('java.lang.', 'UnsupportedOperationException', 171), Ljava_lang_StringBuffer_2_classLit = createForClass('java.lang.', 'StringBuffer', 169), Lcom_google_gwt_user_client_impl_DOMImpl_2_classLit = createForClass('com.google.gwt.user.client.impl.', 'DOMImpl', 123), Lcom_google_gwt_user_client_impl_DOMImpl$1_2_classLit = createForClass('com.google.gwt.user.client.impl.', 'DOMImpl$1', 124), Lcom_google_gwt_user_client_impl_DOMImplStandard_2_classLit = createForClass('com.google.gwt.user.client.impl.', 'DOMImplStandard', 127), Lcom_google_gwt_user_client_impl_DOMImplStandardBase_2_classLit = createForClass('com.google.gwt.user.client.impl.', 'DOMImplStandardBase', 126), Lcom_google_gwt_user_client_impl_DOMImplIE9_2_classLit = createForClass('com.google.gwt.user.client.impl.', 'DOMImplIE9', 125), Lcom_google_gwt_event_logical_shared_CloseEvent_2_classLit = createForClass('com.google.gwt.event.logical.shared.', 'CloseEvent', 75), Ljava_lang_IllegalStateException_2_classLit = createForClass('java.lang.', 'IllegalStateException', 159), Ljava_util_Collections$EmptyList_2_classLit = createForClass('java.util.', 'Collections$EmptyList', 188), Lcom_google_gwt_safehtml_shared_SafeUriString_2_classLit = createForClass('com.google.gwt.safehtml.shared.', 'SafeUriString', 114), Ljava_util_MapEntryImpl_2_classLit = createForClass('java.util.', 'MapEntryImpl', 191), Ljava_lang_IndexOutOfBoundsException_2_classLit = createForClass('java.lang.', 'IndexOutOfBoundsException', 160), Lcom_google_gwt_event_dom_client_PrivateMap_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'PrivateMap', 70), Lcom_google_gwt_event_shared_LegacyHandlerWrapper_2_classLit = createForClass('com.google.gwt.event.shared.', 'LegacyHandlerWrapper', 80), Ljava_util_NoSuchElementException_2_classLit = createForClass('java.util.', 'NoSuchElementException', 192);
+$stats && $stats({moduleName:'gwtcanvasdemo',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalEnd'});
+if ($wnd.gwtcanvasdemo) $wnd.gwtcanvasdemo.onScriptLoad();
+--></script></body></html>
